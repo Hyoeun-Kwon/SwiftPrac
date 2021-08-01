@@ -18,11 +18,11 @@
 		9939873926B39A4C0018C208 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939873826B39A4C0018C208 /* TestViewController.swift */; };
 		9939873B26B3C0130018C208 /* QueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939873A26B3C0130018C208 /* QueryModel.swift */; };
 		9939873D26B3C3380018C208 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939873C26B3C3380018C208 /* DBModel.swift */; };
+		9942D19726B45CDE00EA9162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */; };
 		996DAEE626B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */; };
 		99D8F33C26B27305009DB9D0 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8F33B26B27305009DB9D0 /* Share.swift */; };
 		99D8F33E26B27741009DB9D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8F33D26B27741009DB9D0 /* MainViewController.swift */; };
 		99D8F34226B2871A009DB9D0 /* IDFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8F34126B2871A009DB9D0 /* IDFindViewController.swift */; };
-		99DF7F3226B2D940006B7E72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DF7F3126B2D940006B7E72 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,11 +41,11 @@
 		9939873826B39A4C0018C208 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		9939873A26B3C0130018C208 /* QueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryModel.swift; sourceTree = "<group>"; };
 		9939873C26B3C3380018C208 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
+		9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_InsertInfoEmailViewController.swift; sourceTree = "<group>"; };
 		99D8F33B26B27305009DB9D0 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		99D8F33D26B27741009DB9D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		99D8F34126B2871A009DB9D0 /* IDFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDFindViewController.swift; sourceTree = "<group>"; };
-		99DF7F3126B2D940006B7E72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +102,10 @@
 				99356E9E26B1B4AF002340F9 /* LaunchScreen.storyboard */,
 				99356EA126B1B4AF002340F9 /* Info.plist */,
 				99D8F33B26B27305009DB9D0 /* Share.swift */,
-				99DF7F3126B2D940006B7E72 /* GoogleService-Info.plist */,
 				9939873826B39A4C0018C208 /* TestViewController.swift */,
 				9939873A26B3C0130018C208 /* QueryModel.swift */,
 				9939873C26B3C3380018C208 /* DBModel.swift */,
+				9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */,
 			);
 			path = Login_P;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99356EA026B1B4AF002340F9 /* LaunchScreen.storyboard in Resources */,
-				99DF7F3226B2D940006B7E72 /* GoogleService-Info.plist in Resources */,
+				9942D19726B45CDE00EA9162 /* GoogleService-Info.plist in Resources */,
 				99356E9D26B1B4AF002340F9 /* Assets.xcassets in Resources */,
 				99356E9B26B1B4AF002340F9 /* Main.storyboard in Resources */,
 			);

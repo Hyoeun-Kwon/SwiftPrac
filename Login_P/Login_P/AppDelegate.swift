@@ -5,9 +5,9 @@
 //  Created by HyoEun Kwon on 2021/07/29.
 //
 
+
 import UIKit
-import Firebase // <<< add
-import UserNotifications // << add
+import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // add // Use Firebase library to configure APIs
         FirebaseApp.configure()
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.badge,.sound,.alert], completionHandler: {(granted,error) in })
-        application.registerForRemoteNotifications()
-        
         return true
     }
 

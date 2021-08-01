@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 class SignUp_InsertInfoEmailViewController: UIViewController {
 
     
@@ -33,25 +33,44 @@ class SignUp_InsertInfoEmailViewController: UIViewController {
     
     @IBAction func btnNext(_ sender: UIButton) {
         
-        Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPwd.text!
+//        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+//        Auth.auth().createUser(withEmail: tfEmail.text!, password: tfPwd.text!
+//
+//                ) { (user, error) in
+//
+//                    if user !=  nil{
+//
+//                        print("register success")
+//
+//                    }
+//
+//                    else{
+//
+//                        print("register failed")
+//
+//                    }
+//
+//        }
+        
+        guard let email = tfEmail.text, let password = tfPwd.text else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
 
-                ) { (user, error) in
+            guard let user = authResult?.user else { return }
 
-                    if user !=  nil{
+                      if error == nil {
+                          // TODO: 회원가입 정상 처리 후 다음 로직, 로그인 페이지 or 바로 로그인 시키기
+                        print(user)
+                      } else {
+                          // TODO: 회원가입 실패
+                        print(user)
+                      }
+                  }
+ }//btn
 
-                        print("register success")
 
-                    }
-
-                    else{
-
-                        print("register failed")
-
-                    }
-
-        }
-
-    }
+    
     
     
     
