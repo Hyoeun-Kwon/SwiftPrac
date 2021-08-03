@@ -16,7 +16,7 @@ protocol QueryModelProtocol{
 class QueryModel{
     
     var delegate: QueryModelProtocol!
-    let urlPath = Share.IP + "8080/ios/project/project_query_ios.jsp"
+    let urlPath = Share.IP + ":8080/starbucks/he/userInfoSelect.jsp"
     
     func downloadItems(){
         let url: URL = URL(string: urlPath)!
@@ -65,17 +65,12 @@ class QueryModel{
         //json은!! 무조건 String 으로 다 바꿔 사용 하는것이 좋음  SQLite와 다름
         for i in 0..<jsonResult.count{// 결과를 한 묶음씩 알고있음 현재 student.json 은 jsonResult.count가 2
             jsonElement = jsonResult[i] as! NSDictionary // jsonElement 가 NSDictionary 이므로
-            //왜 딕셔너리? json 파일이 변수명 : 값 으로 구성되어 있으므로
-            
-            //집어넣기 , code의 데이터 값 불러오기 (if let 사용)
-            if let semail = jsonElement["semail"] as? String, //scode 에는 S001 이 들어갈것임
-               //jsonElement(딕셔너리)의 0번째의 code는 scode로!
-               let sid = jsonElement["sid"] as? String,
-               let spassword = jsonElement["spassword"] as? String{ // json 에 있는 dept 키의 값을 가져옴
+            if let userId = jsonElement["userId"] as? String,
+               let userPw = jsonElement["userPw"] as? String,
+               let userNickname = jsonElement["userNickname"] as? String,
+               let userEmail = jsonElement["userEmail"] as? String {
+                let query = DBModel(userId: userId, userPw: userPw, userNickname: userNickname, userEmail: userEmail)
                 
-                //DBModel 로 Bean (데이터 받아서 _ 생성자 만들었었음) 에 데이터 넣음
-                let query = DBModel(semail: semail, sid: sid, spassword: spassword)
-                //생성자에 데이터 넣음
                 
                 //DB모양형태로 받아왔는데, 이걸 배열에 넣는다.
                 locations.add(query) // 2줄이 생김 (java Bean 처럼)

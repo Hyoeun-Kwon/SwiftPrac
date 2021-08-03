@@ -14,7 +14,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var lblUserId: UILabel!
     @IBOutlet weak var lblUserPassword: UILabel!
+    @IBOutlet weak var lblDefaultUserId: UILabel!
     
+
+    @IBOutlet weak var btnLogOut: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +26,8 @@ class MainViewController: UIViewController {
         lblUserId.text = Share.userID
         lblUserPassword.text = Share.userPwd
         
-        
-        
-        
+        let defaultUserId = UserDefaults.standard.object(forKey: "userId")
+        lblDefaultUserId.text = defaultUserId as? String
         
         // Do any additional setup after loading the view.
     }
@@ -33,17 +35,19 @@ class MainViewController: UIViewController {
 
     
     
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnLogOut(_ sender: UIButton) {
+        
+        print("delete id, pwd")
+        UserDefaults.standard.removeObject(forKey: "userId")
+               // UserDefaults.standard.removeObject(forKey: "userPw")
+        Share.userID = ""
+        print(Share.userID)
     }
-    */
-
+    
+    
+    
+    
+    
+    
+    
 }

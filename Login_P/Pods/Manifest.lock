@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.3)
   - Firebase/Analytics (8.4.0):
     - Firebase/Core
   - Firebase/Auth (8.4.0):
@@ -83,6 +84,17 @@ PODS:
   - GoogleUtilities/UserDefaults (7.5.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.6.1)
+  - KakaoSDKAuth (2.5.6):
+    - KakaoSDKCommon (= 2.5.6)
+  - KakaoSDKCommon (2.5.6):
+    - KakaoSDKCommon/Common (= 2.5.6)
+    - KakaoSDKCommon/Network (= 2.5.6)
+  - KakaoSDKCommon/Common (2.5.6)
+  - KakaoSDKCommon/Network (2.5.6):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.5.6)
+  - KakaoSDKUser (2.5.6):
+    - KakaoSDKAuth (= 2.5.6)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -93,9 +105,14 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
+  - Firebase/Core
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKUser
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -106,10 +123,14 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKUser
     - nanopb
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Firebase: 54cdc8bc9c9b3de54f43dab86e62f5a76b47034f
   FirebaseAnalytics: 4751d6a49598a2b58da678cc07df696bcd809ab9
   FirebaseAuth: 8ef169751d795f20921d425f7b0131cc1c70935c
@@ -120,9 +141,12 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
   GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
+  KakaoSDKAuth: 1e1fa737e78eed3f301ab5c164526781a37a42f9
+  KakaoSDKCommon: cdf340a8f671eef75f4ca012003cb350af3c4b6d
+  KakaoSDKUser: f488aa4699b3fd3a836ab5c7e25e2cb4cea190c1
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 3e8712186d7175ec72867b822ff2e2b26be287b8
+PODFILE CHECKSUM: 10798bc989cacd7da44b81019b605d7df0329379
 
 COCOAPODS: 1.10.1

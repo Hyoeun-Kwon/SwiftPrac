@@ -12,9 +12,10 @@ class DBModel: NSObject{
     //그냥 써도 상관없으나 타입주는게 좋다! NSObject 가 가장 큼
         
     // Property : 변수
-    var semail: String?
-    var sid: String?
-    var spassword: String?
+    var userId: String?
+    var userPw: String?
+    var userNickname: String?
+    var userEmail: String?
     
     //Empty constructor  //*** 잊지말자!
     override init() {
@@ -22,10 +23,12 @@ class DBModel: NSObject{
     }
     
     // 배열 만들때 사용 !?  // constructor  --> 실질적 사용
-    init(semail: String, sid: String, spassword: String) { //DB
-        self.semail = semail
-        self.sid = sid
-        self.spassword = spassword
+    init(userId: String, userPw: String, userNickname: String, userEmail: String) { //DB
+        self.userId = userId
+        self.userPw = userPw
+        self.userNickname = userNickname
+        self.userEmail = userEmail
+        
     }
     
 }//class
