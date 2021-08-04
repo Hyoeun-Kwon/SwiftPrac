@@ -23,6 +23,7 @@ class IDFindViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet weak var lblAgreeUse: UILabel!
     @IBOutlet weak var btnAgreeUse: UIButton!
     
+    var userEmail = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,7 @@ class IDFindViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBAction func btnNext(_ sender: UIButton) {
         
         if tfAuthCode.text?.isEmpty == false && btnAgreeAuth.isSelected == true {
-            self.performSegue(withIdentifier: "sgToInsertIdPwd", sender: self)
+            self.performSegue(withIdentifier: "sgToCheckFindId", sender: self)
             
         }else if tfAuthCode.text?.isEmpty == true && btnAgreeAuth.isSelected == true{
             
@@ -142,7 +143,23 @@ class IDFindViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     
     
+    //prepare로 입력된 이메일 값 넘기기!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        userEmail = String((tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
+        
+            print("아이디찾기 보내기 : \(userEmail)")
+        if segue.identifier == "sgToCheckFindId" {
+           
+            let checkFindId = segue.destination as! CheckFindIdViewController
+            //checkFindId.receiveEmail(item: userEmail)
+            checkFindId.receiveEmail = userEmail
+            
+        }
+    }//prepare
     
+    
+ 
     // 터치
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -179,6 +196,8 @@ class IDFindViewController: UIViewController, MFMailComposeViewControllerDelegat
     func setRadius(){
         btnNext.layer.cornerRadius = 20
     }
+    
+    
     
 
 }//----

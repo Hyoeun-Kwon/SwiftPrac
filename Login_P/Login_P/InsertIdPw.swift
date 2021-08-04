@@ -9,6 +9,7 @@ import Foundation
 
 //insert는 protocol이 필요없음
 class InsertIdPwModel{
+    //InsertSignInfo 로 바꾸든지 해야할듯...
     var urlPath = Share.IP + ":8080/starbucks/he/userIdPwNickInsert.jsp" // + urlAdd ( ?와 & 로 쭉쭉 이어갈 거임)
     
     func insertItems(userId: String, userPw: String, userNickname: String, userEmail: String) -> Bool {
