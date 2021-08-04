@@ -112,6 +112,8 @@
 				996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */,
 				9986CC1526B641B200C4E4ED /* SignUp_IdPwdViewController.swift */,
 				99C9116726B8D0D700F3AA3E /* NickNameViewController.swift */,
+				990EFB7426B90D6900DF056C /* CheckFindIdViewController.swift */,
+				99C9117C26B8F2ED00F3AA3E /* SignUpOkViewController.swift */,
 				99356E9926B1B4AF002340F9 /* Main.storyboard */,
 				99356E9C26B1B4AF002340F9 /* Assets.xcassets */,
 				99356E9E26B1B4AF002340F9 /* LaunchScreen.storyboard */,
@@ -122,8 +124,6 @@
 				9939873C26B3C3380018C208 /* DBModel.swift */,
 				9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */,
 				99316A3926B7E12400D95638 /* InsertIdPw.swift */,
-				99C9117C26B8F2ED00F3AA3E /* SignUpOkViewController.swift */,
-				990EFB7426B90D6900DF056C /* CheckFindIdViewController.swift */,
 			);
 			path = Login_P;
 			sourceTree = "<group>";

@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController {
     //개인정보 약관버튼
     @IBOutlet weak var btnAgreePersonalInfo: UIButton!
     //Email-광고성정보
-    @IBOutlet weak var btnAgreeEmailAd: UIButton!
+    @IBOutlet weak var btnAgreeAd: UIButton!
     //이용약관 전체 동의
     @IBOutlet weak var btnAgreeAll: UIButton!
     
@@ -55,8 +55,8 @@ class SignUpViewController: UIViewController {
             btnAgreePersonalInfo.isSelected = true
             btnAgreePersonalInfo.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
 
-            btnAgreeEmailAd.isSelected = true
-            btnAgreeEmailAd.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+            btnAgreeAd.isSelected = true
+            btnAgreeAd.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
 
         }else{
             
@@ -71,8 +71,8 @@ class SignUpViewController: UIViewController {
             btnAgreePersonalInfo.isSelected = false
             btnAgreePersonalInfo.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
             
-            btnAgreeEmailAd.isSelected = false
-            btnAgreeEmailAd.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+            btnAgreeAd.isSelected = false
+            btnAgreeAd.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
             
         }
 
@@ -117,24 +117,18 @@ class SignUpViewController: UIViewController {
     
     
     //E-mail 및 SMS
-    
     @IBAction func btnAgreeEmailAd(_ sender: UIButton) {
         if sender.isSelected == true{
-            btnAgreeEmailAd.isSelected = false
-            btnAgreeEmailAd.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+            btnAgreeAd.isSelected = false
+            btnAgreeAd.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
         }else{
-            btnAgreeEmailAd.isSelected = true
-            btnAgreeEmailAd.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+            btnAgreeAd.isSelected = true
+            btnAgreeAd.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
         }
         
     }
     
-    
-    
-    
 
-    
-    
     // 다음 버튼
     @IBAction func btnNext(_ sender: UIButton) {
         //sgAgreeToInsert
@@ -142,7 +136,20 @@ class SignUpViewController: UIViewController {
         
         if btnAgreeUse.isSelected == true && btnAgreePersonalInfo.isSelected == true{
             // 버튼 눌렀을때 해당 segue로 가게 하겠다.
-            self.performSegue(withIdentifier: "sgAgreeToAuth", sender: self)
+            if btnAgreeAd.isSelected == false{
+                let agreeAlert = UIAlertController(title: "확인", message: "광고성 정보 수집 동의를 거부하였습니다.", preferredStyle: .alert)
+                let agreeAction = UIAlertAction(title: "확인", style: .default, handler: {ACTION in
+                    self.performSegue(withIdentifier: "sgAgreeToAuth", sender: self)
+
+                })
+                
+                agreeAlert.addAction(agreeAction)
+                present(agreeAlert, animated: true, completion: nil)
+            }else{
+                self.performSegue(withIdentifier: "sgAgreeToAuth", sender: self)
+
+            }
+            
         }else{
             //불일치시
             let agreeAlert = UIAlertController(title: "경고", message: "필수 이용약관을 체크해 주세요!", preferredStyle: .alert)
@@ -152,24 +159,16 @@ class SignUpViewController: UIViewController {
             present(agreeAlert, animated: true, completion: nil)
         }
 
- 
-    }
+        
+        
+        
+    }//btnNext
     
-    //--------
+    //버튼 둥글게
     
     func setRadius(){
         btnNext.layer.cornerRadius = 20
     }
     
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+}//---------

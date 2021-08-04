@@ -23,6 +23,10 @@ class CheckFindIdViewController: UIViewController {
         //메세지 창에 현재 아이디
         //lblCheckId.text = "고객님의 아이디는 \(defaultUserId as! String) 입니다."
         lblCheckId.text = "고객님의 아이디는 \(Share.userID) 입니다."
+        // 데이터베이스의 이메일값을 비교 해당 아이디를 불러와야함!
+        // 그리고 그 아이디를 prepare로 넘겨서 로그인하기 버튼 눌렀을때 로그인창에 띄워주기? --> 나중에 해도 됨
+        
+        
         
         setRadius()
        

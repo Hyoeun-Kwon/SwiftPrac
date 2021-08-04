@@ -12,11 +12,16 @@ class IDFindViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     
     @IBOutlet weak var tfEmail: UITextField!
-    @IBOutlet weak var tfPwd: UITextField!
+    @IBOutlet weak var tfAuthCode: UITextField!
     @IBOutlet weak var btnNext: UIButton!
     
     
-    
+    //인증약관 동의버튼
+    @IBOutlet weak var btnAgreeAuth: UIButton!
+    @IBOutlet weak var lblAgreePersonalInfo: UILabel!
+    @IBOutlet weak var btnAgreePersonalInfo: UIButton!
+    @IBOutlet weak var lblAgreeUse: UILabel!
+    @IBOutlet weak var btnAgreeUse: UIButton!
     
     
     override func viewDidLoad() {
@@ -28,41 +33,109 @@ class IDFindViewController: UIViewController, MFMailComposeViewControllerDelegat
         setUnderLine()
         setRadius()
         
-
-        
-
+        if !MFMailComposeViewController.canSendMail() {
+                   print("Mail services are not available")
+                   return
+               }
 
     }//viewDidLoad
     
     
     
-    @IBAction func btnNext(_ sender: UIButton) {
+    //약관동의버튼 누르면 -> 아래 동의 라벨들 사라지기
+    @IBAction func btnAgreeAuth(_ sender: UIButton) {
         
+        if sender.isSelected == true{
+            lblAgreePersonalInfo.isHidden = false
+            btnAgreePersonalInfo.isHidden = false
+            lblAgreeUse.isHidden = false
+            btnAgreeUse.isHidden = false
+            btnAgreeAuth.isSelected = false
+            btnAgreeAuth.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+        }else{
+            lblAgreePersonalInfo.isHidden = true
+            btnAgreePersonalInfo.isHidden = true
+            lblAgreeUse.isHidden = true
+            btnAgreeUse.isHidden = true
+            btnAgreeAuth.isSelected = true
+            btnAgreeAuth.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        }
+        
+    }
+    
+    
+    
+    //이메일 인증번호 보내기
+    @IBAction func btnSendCode(_ sender: UIButton) {
         let mailComposeViewController = configuredMailComposeViewController()
                 if MFMailComposeViewController.canSendMail() {
+                    // Present the view controller modally.
                     self.present(mailComposeViewController, animated: true, completion: nil)
                     print("can send mail")
                 } else {
                     self.showSendMailErrorAlert()
                 }
-    }
+
+    }//btnSendCode
     
+    
+    
+    
+    
+    //다음버튼 누르면 : 인증번호 일치시 넘어가기 (일단 낫널이면 넘어가기)
+    @IBAction func btnNext(_ sender: UIButton) {
+        
+        if tfAuthCode.text?.isEmpty == false && btnAgreeAuth.isSelected == true {
+            self.performSegue(withIdentifier: "sgToInsertIdPwd", sender: self)
+            
+        }else if tfAuthCode.text?.isEmpty == true && btnAgreeAuth.isSelected == true{
+            
+            let CodeAlert = UIAlertController(title: "경고", message: "인증번호를 입력해주세요", preferredStyle: .alert)
+            let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            
+            CodeAlert.addAction(onAction)
+            present(CodeAlert, animated: true, completion: nil)
+            
+        }else if tfAuthCode.text?.isEmpty == false && btnAgreeAuth.isSelected == false {
+            let CodeAlert = UIAlertController(title: "경고", message: "필수 항목을 동의해주세요", preferredStyle: .alert)
+            let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            
+            CodeAlert.addAction(onAction)
+            present(CodeAlert, animated: true, completion: nil)
+        }else{
+            let CodeAlert = UIAlertController(title: "경고", message: "필수 항목 동의와 인증번호를 입력해주세요", preferredStyle: .alert)
+            let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            
+            CodeAlert.addAction(onAction)
+            present(CodeAlert, animated: true, completion: nil)
+        }
+      
+        
+    }//btnNext
+    
+    
+    //이메일 함수 -1
     func configuredMailComposeViewController() -> MFMailComposeViewController {
             let mailComposerVC = MFMailComposeViewController()
             mailComposerVC.mailComposeDelegate = self
+        
+        // Configure the fields of the interface.
             mailComposerVC.setToRecipients(["let.khe92@gmail.com"])
-            mailComposerVC.setSubject("봉사꾼 IOS 문의 메일")
-            mailComposerVC.setMessageBody("여러분의 소중한 의견 감사드립니다. \n - 봉사꾼 -", isHTML: false)
+            mailComposerVC.setSubject("비밀번호 변경 번호")
+            mailComposerVC.setMessageBody("여러분의 소중한 비밀번호를 누군가에게 알려주지 마세요. \n - 사이렌오더 -", isHTML: false)
             
             return mailComposerVC
         }
-        
+     
+    //이메일 함수 -2
     func showSendMailErrorAlert() {
             let sendMailErrorAlert = UIAlertView(title: "메일을 전송 실패", message: "아이폰 이메일 설정을 확인하고 다시 시도해주세요.", delegate: self, cancelButtonTitle: "확인")
             sendMailErrorAlert.show()
         }
         
-        // MARK: MFMailComposeViewControllerDelegate Method
+    
+    // MARK: MFMailComposeViewControllerDelegate Method
+    //이메일 함수 -3
     private func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
             controller.dismiss(animated: true, completion: nil)
         }
@@ -91,13 +164,13 @@ class IDFindViewController: UIViewController, MFMailComposeViewControllerDelegat
         tfEmail.textColor = UIColor.systemGray
         
         //패스워드
-        tfPwd.borderStyle = .none
+        tfAuthCode.borderStyle = .none
         let border2 = CALayer()
-        border2.frame = CGRect(x: 0, y: tfPwd.frame.size.height-1, width: tfPwd.frame.width, height: 1)
+        border2.frame = CGRect(x: 0, y: tfAuthCode.frame.size.height-1, width: tfAuthCode.frame.width, height: 1)
         border2.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        tfPwd.layer.addSublayer((border2))
-        tfPwd.textAlignment = .left
-        tfPwd.textColor = UIColor.systemGray
+        tfAuthCode.layer.addSublayer((border2))
+        tfAuthCode.textAlignment = .left
+        tfAuthCode.textColor = UIColor.systemGray
         
         
     }

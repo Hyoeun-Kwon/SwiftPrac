@@ -33,7 +33,7 @@ class SignUp_IdPwdViewController: UIViewController {
     
     var userId = ""
     var userPw = ""
-    
+    var receiveEmail = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,24 +151,28 @@ class SignUp_IdPwdViewController: UIViewController {
         
     }//btnNext
     
-
+    //입력된 아이디와 패스워드 넘기기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
 
         userId = String((tfUserId.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
         userPw = String((tfUserPassWord.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
         
+        
         print("보내기\(userId)")
         print(userPw)
-
+        print("아이디 패스워드와 보내기\(receiveEmail)")
+        
         if segue.identifier == "sgToNickName"{
 
             let signInfo = segue.destination as! NickNameViewController
             //signInfo.receiveInfo(userId: userId, userPw: userPw)
             signInfo.receiveId = userId
             signInfo.receivePw = userPw
+            signInfo.receiveEmail = receiveEmail
 
         }
-    }
+    }//prepare
     
     
     

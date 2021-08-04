@@ -18,7 +18,7 @@ class NickNameViewController: UIViewController {
     
     var receiveId = ""
     var receivePw = ""
-    
+    var receiveEmail = ""
     
     
     override func viewDidLoad() {
@@ -38,9 +38,9 @@ class NickNameViewController: UIViewController {
     @IBAction func btnNext(_ sender: UIButton) {
         
         let nickname = String((tfNickname.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
-
+        print("닉네임과 함께 최종 보내기\(receiveEmail)")
         let insertIdPwModel = InsertIdPwModel()
-        let result = insertIdPwModel.insertItems(userId: receiveId, userPw: receivePw, userNickname: nickname)
+        let result = insertIdPwModel.insertItems(userId: receiveId, userPw: receivePw, userNickname: nickname, userEmail: receiveEmail)
         
         if result{
             let resultAlert = UIAlertController(title: "완료", message: "가입이 완료되었습니다.", preferredStyle: .alert)
@@ -63,11 +63,20 @@ class NickNameViewController: UIViewController {
             present(resultAlert, animated: true, completion: nil)
             
         }
-        
-       
+         
+    }//btnNext
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        
-    }
+        if segue.identifier == "sgToSignUpOk"{
+
+            let signOkId = segue.destination as! SignUpOkViewController
+            //signInfo.receiveInfo(userId: userId, userPw: userPw)
+            signOkId.receiveMsgId = receiveId
+
+        }
+    }//prepare
     
     
     

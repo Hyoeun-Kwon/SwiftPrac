@@ -191,10 +191,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y09-rQ-FWj">
-                                <rect key="frame" x="29" y="791" width="357" height="42"/>
+                                <rect key="frame" x="29" y="773" width="357" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -203,7 +203,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e16-t0-nth">
-                                <rect key="frame" x="24" y="550" width="151" height="30"/>
+                                <rect key="frame" x="33" y="539" width="151" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" systemColor="opaqueSeparatorColor"/>
@@ -217,7 +217,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69J-bF-UrQ">
-                                <rect key="frame" x="24" y="665" width="291" height="30"/>
+                                <rect key="frame" x="33" y="654" width="291" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" systemColor="opaqueSeparatorColor"/>
@@ -231,11 +231,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEI-gk-Rmn">
-                                <rect key="frame" x="24" y="709" width="383" height="30"/>
+                                <rect key="frame" x="33" y="701" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                <state key="normal" title="  E-mail 및 SMS 광고성 정보 수신 동의(선택)">
+                                <state key="normal" title="  SMS 광고성 정보 수신 동의(선택)">
                                     <color key="titleColor" systemColor="labelColor"/>
                                     <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="default"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default"/>
@@ -245,7 +245,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-m9-MG9">
-                                <rect key="frame" x="24" y="620" width="193" height="30"/>
+                                <rect key="frame" x="33" y="609" width="193" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -265,8 +265,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="wdC-uP-Cdn"/>
                     <connections>
+                        <outlet property="btnAgreeAd" destination="cEI-gk-Rmn" id="XNW-1N-lMD"/>
                         <outlet property="btnAgreeAll" destination="e16-t0-nth" id="vv1-W7-9SO"/>
-                        <outlet property="btnAgreeEmailAd" destination="cEI-gk-Rmn" id="XNW-1N-lMD"/>
                         <outlet property="btnAgreePersonalInfo" destination="69J-bF-UrQ" id="hqh-PO-5dD"/>
                         <outlet property="btnAgreeUse" destination="nlc-m9-MG9" id="lm9-2a-oPL"/>
                         <outlet property="btnNext" destination="y09-rQ-FWj" id="CLW-iv-jKV"/>
@@ -285,89 +285,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="본인확인을 위해  인증을 진행해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jm9-Yh-7np">
-                                <rect key="frame" x="29" y="118" width="223" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-xU-WlN">
-                                <rect key="frame" x="29" y="207" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="btn_box:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="WWP-3Z-N9d"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="본인 인증 서비스 약관 전체 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqQ-xx-NPK">
-                                <rect key="frame" x="66" y="211" width="236" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="휴대폰 본인 인증 서비스 이용약관 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvL-x7-tFq">
-                                <rect key="frame" x="36" y="254" width="300" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="휴대폰 통신사 이용약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy5-ck-9ul">
-                                <rect key="frame" x="36" y="284" width="300" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVd-5X-kwC">
-                                <rect key="frame" x="344" y="286" width="13" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.forward" catalog="system"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 제공 및 이용약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7f-4k-Yie">
-                                <rect key="frame" x="36" y="314" width="300" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-Vp-Y7E">
-                                <rect key="frame" x="344" y="315" width="13" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.forward" catalog="system"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="고유식별정보 처리 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRA-CV-S4v">
-                                <rect key="frame" x="36" y="344" width="300" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPG-ep-Ewy">
-                                <rect key="frame" x="344" y="346" width="13" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.forward" catalog="system"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKc-Qb-LY1">
-                                <rect key="frame" x="344" y="255" width="13" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.forward" catalog="system"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7j-9c-W1e">
-                                <rect key="frame" x="29" y="790" width="357" height="42"/>
+                                <rect key="frame" x="29" y="772" width="357" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -376,40 +298,103 @@
                                     <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="urM-Cb-Zpf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="패스워드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DB4-Oq-HNa">
-                                <rect key="frame" x="29" y="462" width="357" height="64"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DB4-Oq-HNa">
+                                <rect key="frame" x="29" y="437" width="357" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gjc-8F-5dx">
-                                <rect key="frame" x="29" y="390" width="357" height="64"/>
+                                <rect key="frame" x="29" y="365" width="308" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* 타인의 개인정보를 도용하여 가입한 경우, 서비스 이용 제한 및 법적 제재를 받으실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-7e-g9U">
-                                <rect key="frame" x="33" y="534" width="349" height="55"/>
+                                <rect key="frame" x="33" y="509" width="349" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="본인확인을 위해  인증을 진행해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHm-iW-Nrx">
+                                <rect key="frame" x="37" y="153" width="223" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 제공 및 이용약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lq-Ed-DAq">
+                                <rect key="frame" x="37" y="289" width="300" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원 이용 약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWm-4c-q4e">
+                                <rect key="frame" x="37" y="319" width="300" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-Xh-Ahe">
+                                <rect key="frame" x="29" y="242" width="296" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <state key="normal" title="  본인 인증 서비스 약관 전체 동의">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="default"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAgreeAll:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="I2U-4h-3tT"/>
+                                    <action selector="btnAgreeAuth:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="0oP-WQ-KgZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjn-xz-410">
+                                <rect key="frame" x="359" y="290" width="13" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.forward" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBk-WB-4DO">
+                                <rect key="frame" x="359" y="319" width="13" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.forward" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgI-tC-eiM">
+                                <rect key="frame" x="347" y="382" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="보내기"/>
+                                <connections>
+                                    <action selector="btnSendCode:" destination="RIt-0t-vof" eventType="touchUpInside" id="4O6-IN-gac"/>
+                                    <action selector="btnSendCode:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="nQG-yg-Otm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DdG-gg-pAn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="vdn-XH-NaO"/>
                     <connections>
+                        <outlet property="btnAgreeAuth" destination="mcV-Xh-Ahe" id="4wL-ai-ewl"/>
+                        <outlet property="btnAgreePersonalInfo" destination="xjn-xz-410" id="ujB-6m-tes"/>
+                        <outlet property="btnAgreeUse" destination="MBk-WB-4DO" id="pOS-Mt-4F5"/>
                         <outlet property="btnNext" destination="q7j-9c-W1e" id="avR-3V-24e"/>
+                        <outlet property="lblAgreePersonalInfo" destination="9Lq-Ed-DAq" id="Svh-CV-1Ud"/>
+                        <outlet property="lblAgreeUse" destination="oWm-4c-q4e" id="6Yi-0r-7VW"/>
+                        <outlet property="tfAuthCode" destination="DB4-Oq-HNa" id="6bO-rL-g8r"/>
                         <outlet property="tfEmail" destination="gjc-8F-5dx" id="rAQ-OT-8g9"/>
-                        <outlet property="tfPwd" destination="DB4-Oq-HNa" id="6bO-rL-g8r"/>
-                        <segue destination="J2L-hO-Jiy" kind="show" identifier="sgToInsertIdPwd" id="97c-NA-Zdy"/>
+                        <segue destination="J2L-hO-Jiy" kind="show" identifier="sgToInsertIdPwd" id="jk4-2X-FF5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUC-Nc-WB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600" y="652"/>
+            <point key="canvasLocation" x="2615.9420289855075" y="651.5625"/>
         </scene>
         <!--Sign Up Id Pwd View Controller-->
         <scene sceneID="fqG-9f-ClL">
@@ -439,10 +424,10 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rQ-pW-zuO">
-                                <rect key="frame" x="37" y="774" width="357" height="59"/>
+                                <rect key="frame" x="37" y="773" width="357" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -528,7 +513,7 @@
                                 <rect key="frame" x="29" y="773" width="357" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -567,22 +552,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00님, 회원가입이 완료되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S8-zc-vzg">
-                                <rect key="frame" x="105" y="242" width="220" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startbucksLogo" translatesAutoresizingMaskIntoConstraints="NO" id="S3G-GK-yKu">
                                 <rect key="frame" x="87" y="390" width="240" height="238"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbQ-HF-nWP">
-                                <rect key="frame" x="29" y="779" width="357" height="59"/>
+                                <rect key="frame" x="29" y="778" width="357" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -593,6 +571,13 @@
                                     <action selector="btnNext:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="xgf-gM-pPc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00님, 회원가입이 완료되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S8-zc-vzg">
+                                <rect key="frame" x="48" y="185" width="318" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EGM-yb-vjT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -600,7 +585,7 @@
                     <navigationItem key="navigationItem" id="dOv-sq-eAo"/>
                     <connections>
                         <outlet property="btnNext" destination="EbQ-HF-nWP" id="xdn-6B-vfH"/>
-                        <outlet property="tfWelcomeMsg" destination="2S8-zc-vzg" id="cVM-Xa-zaf"/>
+                        <outlet property="lblWelcomeMsg" destination="2S8-zc-vzg" id="cVM-Xa-zaf"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="sgSignToLogin" id="MCa-2Y-rRE"/>
                     </connections>
                 </viewController>
@@ -670,382 +655,8 @@
                                         <rect key="frame" x="23" y="8" width="369" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="안전한">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="비밀번호">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="만들기">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="   * ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="영문">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="숫자">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="혼합하여">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" 5~20">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="자">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="이내로">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="입력하세요">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=".  * ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="아이디와">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="같은">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="비밀번호">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=", ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="생일">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=", ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="학번">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=", ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="전화번호">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="등">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="개인정보와">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="관련된">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="숫자">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=", ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="연속된">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="숫자">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=", ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="동일하게">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="반복된">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="숫자">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="등">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="다른사람이">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="쉽게">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="알아낼">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="수">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="있는">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="비밀번호는">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="유출">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="위험이">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="높아">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="사용하지">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="않는">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="것이">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="좋습니다">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=".">
+                                            <fragment>
+                                                <string key="content">안전한 비밀번호 만들기   * 영문 숫자 혼합하여 5~20자 이내로 입력하세요.  * 아이디와 같은 비밀번호, 생일, 학번, 전화번호 등 개인정보와 관련된 숫자, 연속된 숫자, 동일하게 반복된 숫자 등 다른사람이 쉽게 알아낼 수 있는 비밀번호는 유출 위험이 높아 사용하지 않는 것이 좋습니다.</string>
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="17"/>
                                                 </attributes>
@@ -1073,53 +684,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5d-gA-G8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1856.521739130435" y="-1004.4642857142857"/>
-        </scene>
-        <!--Test View Controller-->
-        <scene sceneID="6JL-aU-dnu">
-            <objects>
-                <viewController id="67k-XY-KZi" customClass="TestViewController" customModule="Login_P" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GeF-WD-Q3W">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrX-Yw-inN">
-                                <rect key="frame" x="115" y="293" width="17" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5la-68-c56">
-                                <rect key="frame" x="192" y="286" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="pwd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mp9-vo-w1R">
-                                <rect key="frame" x="115" y="371" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfh-At-gz9">
-                                <rect key="frame" x="192" y="364" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="alH-0x-kBJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <outlet property="txtEmail" destination="5la-68-c56" id="mh4-DD-9PD"/>
-                        <outlet property="txtPassword" destination="vfh-At-gz9" id="31R-Of-943"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pUi-gz-Gpe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2513" y="-1004"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="8tP-Pg-zq1">
@@ -1175,11 +739,27 @@
                         <outlet property="lblDefaultUserId" destination="FGx-Zf-bRa" id="IZm-ZM-2S5"/>
                         <outlet property="lblUserId" destination="PHD-Mg-d1n" id="vlJ-8I-HzP"/>
                         <outlet property="lblUserPassword" destination="zsJ-k7-rK4" id="V1n-ca-hwf"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="sgMainToLogin" id="Elm-DQ-AuB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiH-Ho-RHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="866.51785714285711"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2ec-Bc-RJd">
+            <objects>
+                <viewController id="vNj-4O-TxT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FBm-Xy-Ag4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xoz-Yf-4Ju"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Fr-Wm-Acv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="-729"/>
         </scene>
         <!--Find View Controller-->
         <scene sceneID="6di-Zd-PcW">
@@ -1190,43 +770,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="본인확인을 위해  인증을 진행해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-6K-X3j">
-                                <rect key="frame" x="37" y="137" width="223" height="81"/>
+                                <rect key="frame" x="37" y="139" width="223" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIv-B9-ngg">
-                                <rect key="frame" x="37" y="226" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="btn_box:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="aVw-e2-o3c"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="본인 인증 서비스 약관 전체 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP9-cH-Dhh">
-                                <rect key="frame" x="78" y="230" width="236" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="휴대폰 본인인증 서비스 이용약관 동의(필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvR-sR-fC2">
-                                <rect key="frame" x="37" y="108" width="300" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYx-DQ-RHd">
-                                <rect key="frame" x="37" y="789" width="357" height="42"/>
+                                <rect key="frame" x="37" y="771" width="357" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1235,61 +789,72 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OXF-MG-QqB">
-                                <rect key="frame" x="37" y="416" width="357" height="64"/>
+                                <rect key="frame" x="29" y="354" width="296" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="패스워드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-dS-bSv">
-                                <rect key="frame" x="37" y="488" width="357" height="64"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-dS-bSv">
+                                <rect key="frame" x="29" y="426" width="353" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* 타인의 개인정보를 도용하여 가입한 경우, 서비스 이용 제한 및 법적 제재를 받으실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1I-LO-4Tj">
-                                <rect key="frame" x="41" y="574" width="349" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j5-0k-8V9">
-                                <rect key="frame" x="357" y="285" width="13" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.forward" catalog="system"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 제공 및 이용약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlV-sv-2o0">
-                                <rect key="frame" x="45" y="315" width="300" height="21"/>
+                                <rect key="frame" x="37" y="275" width="300" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fx-NB-dp6">
-                                <rect key="frame" x="357" y="314" width="13" height="22"/>
+                                <rect key="frame" x="349" y="272" width="13" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="chevron.forward" catalog="system"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="고유식별정보 처리 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ9-XI-T6l">
-                                <rect key="frame" x="45" y="345" width="300" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원 이용 약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ9-XI-T6l">
+                                <rect key="frame" x="37" y="305" width="300" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKk-iq-5oP">
-                                <rect key="frame" x="357" y="345" width="13" height="22"/>
+                                <rect key="frame" x="349" y="303" width="13" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="chevron.forward" catalog="system"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이메일 이용약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uu-Yr-uyA">
-                                <rect key="frame" x="45" y="284" width="300" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQT-19-RBs">
+                                <rect key="frame" x="29" y="228" width="296" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <state key="normal" title="  본인 인증 서비스 약관 전체 동의">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <imageReference key="image" image="checkmark.circle" catalog="system" symbolScale="default"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAgreeAll:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="CJu-Ny-4E5"/>
+                                    <action selector="btnAgreeAuth:" destination="RIt-0t-vof" eventType="touchUpInside" id="fMD-MN-O0p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-Tt-xfY">
+                                <rect key="frame" x="343" y="371" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="보내기"/>
+                                <connections>
+                                    <action selector="btnSendCode:" destination="RIt-0t-vof" eventType="touchUpInside" id="c0O-B9-M6H"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* 타인의 개인정보를 도용하여 가입한 경우, 서비스 이용 제한 및 법적 제재를 받으실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1I-LO-4Tj">
+                                <rect key="frame" x="29" y="524" width="349" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1298,15 +863,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="q9R-ub-QL5"/>
                     <connections>
+                        <outlet property="btnAgreeAuth" destination="WQT-19-RBs" id="zFk-Nd-0ZB"/>
+                        <outlet property="btnAgreePersonalInfo" destination="7fx-NB-dp6" id="2vj-ib-2kd"/>
+                        <outlet property="btnAgreeUse" destination="LKk-iq-5oP" id="BH1-xP-yaP"/>
                         <outlet property="btnNext" destination="WYx-DQ-RHd" id="UlL-2W-kY5"/>
+                        <outlet property="lblAgreePersonalInfo" destination="YlV-sv-2o0" id="3XL-Ph-O6v"/>
+                        <outlet property="lblAgreeUse" destination="AZ9-XI-T6l" id="eF3-9W-nHX"/>
+                        <outlet property="tfAuthCode" destination="V0d-dS-bSv" id="KUs-HQ-0Qa"/>
                         <outlet property="tfEmail" destination="OXF-MG-QqB" id="5eU-wm-KNI"/>
-                        <outlet property="tfPwd" destination="V0d-dS-bSv" id="KUs-HQ-0Qa"/>
                         <segue destination="oIJ-Gi-5kd" kind="show" identifier="sgToCheckFindId" id="KTI-jC-Xgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovF-Gm-ZVo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="-350"/>
+            <point key="canvasLocation" x="1856.521739130435" y="-350.22321428571428"/>
         </scene>
         <!--Check Find Id View Controller-->
         <scene sceneID="atS-mt-OXg">
@@ -1375,7 +945,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KTI-jC-Xgm"/>
         <segue reference="XFm-5K-5Sy"/>
     </inferredMetricsTieBreakers>
     <resources>

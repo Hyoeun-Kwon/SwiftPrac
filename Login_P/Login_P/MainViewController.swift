@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import KakaoSDKUser
 class MainViewController: UIViewController {
 
     
@@ -38,13 +38,33 @@ class MainViewController: UIViewController {
     @IBAction func btnLogOut(_ sender: UIButton) {
         
         print("delete id, pwd")
-        UserDefaults.standard.removeObject(forKey: "userId")
-               // UserDefaults.standard.removeObject(forKey: "userPw")
-        Share.userID = ""
         print(Share.userID)
+
+        
+        let logOutAlert = UIAlertController(title: "경고", message: "로그아웃을 하시겠습니까?", preferredStyle: .alert)
+        let onAction = UIAlertAction(title: "확인", style: .default, handler: { ACTION in
+            
+            UserDefaults.standard.removeObject(forKey: "userId")
+            // UserDefaults.standard.removeObject(forKey: "userPw")
+            Share.userID = ""
+            UserApi.shared.unlink {(error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("unlink() success.")
+                }
+            }
+            
+            self.performSegue(withIdentifier: "sgMainToLogin", sender: self)
+
+        })
+        
+        logOutAlert.addAction(onAction)
+        present(logOutAlert, animated: true, completion: nil)
     }
     
-    
+  
     
     
     

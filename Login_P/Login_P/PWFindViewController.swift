@@ -89,12 +89,16 @@ class PWFindViewController: UIViewController {
     @IBAction func btnNext(_ sender: UIButton) {
         remove()
         
+        
+        //해당 이메일의 아이디의 패스워드를 업데이트!
+        
+        
         if checkIsValidPw() == true && checkPw() == true{
             //self.performSegue(withIdentifier: "sgToNickName", sender: self)
            
         }
         
-        
+        //비밀번호가 변경되었습니다 얼러트 뜨고 로그인 화면으로 돌아가기!
         
     }
     

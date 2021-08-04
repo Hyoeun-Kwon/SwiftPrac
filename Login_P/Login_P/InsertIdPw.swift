@@ -11,10 +11,10 @@ import Foundation
 class InsertIdPwModel{
     var urlPath = Share.IP + ":8080/starbucks/he/userIdPwNickInsert.jsp" // + urlAdd ( ?와 & 로 쭉쭉 이어갈 거임)
     
-    func insertItems(userId: String, userPw: String, userNickname: String) -> Bool { //data를 달고 넘어와서 DB연결해야함
-        // Error message를 주기위해 Bool ( 잘됏다 아니다!)
+    func insertItems(userId: String, userPw: String, userNickname: String, userEmail: String) -> Bool {
+       
         var result: Bool = true
-        let urlAdd = "?userId=\(userId)&userPw=\(userPw)&userNickname=\(userNickname)" // 띄어쓰기하면 안됨!
+        let urlAdd = "?userId=\(userId)&userPw=\(userPw)&userNickname=\(userNickname)&userEmail=\(userEmail)"
         urlPath = urlPath + urlAdd // 진짜 url
         
         // 한글 url encoding

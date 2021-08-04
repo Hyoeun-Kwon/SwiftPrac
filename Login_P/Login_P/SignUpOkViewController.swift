@@ -9,9 +9,9 @@ import UIKit
 
 class SignUpOkViewController: UIViewController {
 
+    var receiveMsgId = ""
     
-    
-    @IBOutlet weak var tfWelcomeMsg: UILabel!
+    @IBOutlet weak var lblWelcomeMsg: UILabel!
     @IBOutlet weak var btnNext: UIButton!
     
     override func viewDidLoad() {
@@ -19,6 +19,10 @@ class SignUpOkViewController: UIViewController {
 
         self.navigationController?.navigationBar.topItem?.title = ""
         setRadius()
+        
+        //전 페이지에서 아이디 값을 한번더 넘겨와서 넣어줘야 함
+        lblWelcomeMsg.text = "\(receiveMsgId)님, 회원가입이 완료되었습니다."
+        
         
     }
     
