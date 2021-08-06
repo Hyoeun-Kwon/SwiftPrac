@@ -9,8 +9,7 @@ import UIKit
 
 class SignUp_IdPwdViewController: UIViewController {
     
-    
-    
+    let verifyDuplicatedIdModel = VerifyDuplicatedIdModel()
     //label lists
     lazy var labelLists = [lblId, lblPw, lblCheckPw]
     
@@ -44,6 +43,9 @@ class SignUp_IdPwdViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
         setUnderLine()
         setRadius()
+        
+        
+        
         
     }//viewDidLoad
     
@@ -124,28 +126,20 @@ class SignUp_IdPwdViewController: UIViewController {
             return true
     }
     
-    
-    
-    
-    
-    
-    
-    
+
     
     //다음 버튼
     @IBAction func btnNext(_ sender: UIButton) {
         
-        
-        
+ 
         remove()//label 빈칸
-        
-  
-        
+
         if checkIsValidId() == true && checkIsValidPw() == true && checkPw() == true {
             
-            self.performSegue(withIdentifier: "sgToNickName", sender: self)
+            userId = String((tfUserId.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
+            verifyDuplicatedIdModel.delegate = self
+            verifyDuplicatedIdModel.downloadItems(subUrl: userId)
            
-            
         }
         
         
@@ -213,23 +207,34 @@ class SignUp_IdPwdViewController: UIViewController {
         tfPwdCheck.textColor = UIColor.systemGray
         
         
-        
     }
     
     func setRadius(){
         btnNext.layer.cornerRadius = 20
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension SignUp_IdPwdViewController: VerifyDuplicatedIdProtocol{
+
+    func itemDownloaded(items: String) {
+        print("item Downloaded")
+        if items == "0"{
+            //일치하는 아이디가 없다면!
+            self.performSegue(withIdentifier: "sgToNickName", sender: self)
+
+            
+        }else{
+            //일치하는 아이디가 있다면
+            let duplicateAlert = UIAlertController(title: "경고", message: "중복된 아이디입니다.", preferredStyle: .alert)
+            let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+
+            duplicateAlert.addAction(onAction)
+            present(duplicateAlert, animated: true, completion: nil)
+
+            
+        }
+    }
+  
+}
+

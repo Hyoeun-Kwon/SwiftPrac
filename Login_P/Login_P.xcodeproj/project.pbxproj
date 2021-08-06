@@ -10,6 +10,8 @@
 		9554FA3ED402B9EEEDE41DA0 /* Pods_Login_P.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E18D6D697EB08FC8F0B321 /* Pods_Login_P.framework */; };
 		990EFB7526B90D6900DF056C /* CheckFindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990EFB7426B90D6900DF056C /* CheckFindIdViewController.swift */; };
 		990EFB7726B911CF00DF056C /* PWFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990EFB7626B911CF00DF056C /* PWFindViewController.swift */; };
+		99142C2726BAF6A50051F347 /* QueryEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99142C2626BAF6A50051F347 /* QueryEmailModel.swift */; };
+		99142C2926BAF6C30051F347 /* DBEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99142C2826BAF6C30051F347 /* DBEmailModel.swift */; };
 		99316A3A26B7E12400D95638 /* InsertIdPw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99316A3926B7E12400D95638 /* InsertIdPw.swift */; };
 		99356E9426B1B4AF002340F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99356E9326B1B4AF002340F9 /* AppDelegate.swift */; };
 		99356E9626B1B4AF002340F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99356E9526B1B4AF002340F9 /* SceneDelegate.swift */; };
@@ -22,8 +24,9 @@
 		9939873B26B3C0130018C208 /* QueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939873A26B3C0130018C208 /* QueryModel.swift */; };
 		9939873D26B3C3380018C208 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9939873C26B3C3380018C208 /* DBModel.swift */; };
 		9942D19726B45CDE00EA9162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */; };
+		995719A126BCB129007E55ED /* PWEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995719A026BCB129007E55ED /* PWEmailViewController.swift */; };
+		995719A526BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995719A426BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift */; };
 		996DAEE626B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */; };
-		996F46BF26BAD273002857D7 /* SearchIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996F46BE26BAD273002857D7 /* SearchIdModel.swift */; };
 		9986CC1626B641B200C4E4ED /* SignUp_IdPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9986CC1526B641B200C4E4ED /* SignUp_IdPwdViewController.swift */; };
 		99C9116826B8D0D700F3AA3E /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9116726B8D0D700F3AA3E /* NickNameViewController.swift */; };
 		99C9117D26B8F2ED00F3AA3E /* SignUpOkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9117C26B8F2ED00F3AA3E /* SignUpOkViewController.swift */; };
@@ -38,6 +41,8 @@
 		90C0C2214B5E50B469500666 /* Pods-Login_P.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login_P.release.xcconfig"; path = "Target Support Files/Pods-Login_P/Pods-Login_P.release.xcconfig"; sourceTree = "<group>"; };
 		990EFB7426B90D6900DF056C /* CheckFindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckFindIdViewController.swift; sourceTree = "<group>"; };
 		990EFB7626B911CF00DF056C /* PWFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWFindViewController.swift; sourceTree = "<group>"; };
+		99142C2626BAF6A50051F347 /* QueryEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryEmailModel.swift; sourceTree = "<group>"; };
+		99142C2826BAF6C30051F347 /* DBEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBEmailModel.swift; sourceTree = "<group>"; };
 		99316A3926B7E12400D95638 /* InsertIdPw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertIdPw.swift; sourceTree = "<group>"; };
 		99356E9026B1B4AF002340F9 /* Login_P.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login_P.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99356E9326B1B4AF002340F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +57,9 @@
 		9939873A26B3C0130018C208 /* QueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryModel.swift; sourceTree = "<group>"; };
 		9939873C26B3C3380018C208 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		995719A026BCB129007E55ED /* PWEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWEmailViewController.swift; sourceTree = "<group>"; };
+		995719A426BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyDuplicatedIdModel.swift; sourceTree = "<group>"; };
 		996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_InsertInfoEmailViewController.swift; sourceTree = "<group>"; };
-		996F46BE26BAD273002857D7 /* SearchIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIdModel.swift; sourceTree = "<group>"; };
 		9986CC1526B641B200C4E4ED /* SignUp_IdPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_IdPwdViewController.swift; sourceTree = "<group>"; };
 		99C9116726B8D0D700F3AA3E /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
 		99C9117C26B8F2ED00F3AA3E /* SignUpOkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOkViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				99D8F34126B2871A009DB9D0 /* IDFindViewController.swift */,
 				990EFB7426B90D6900DF056C /* CheckFindIdViewController.swift */,
 				990EFB7626B911CF00DF056C /* PWFindViewController.swift */,
+				995719A026BCB129007E55ED /* PWEmailViewController.swift */,
 				99D8F33D26B27741009DB9D0 /* MainViewController.swift */,
 				99356EA726B1C26D002340F9 /* SignUpViewController.swift */,
 				996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */,
@@ -126,7 +133,9 @@
 				9939873C26B3C3380018C208 /* DBModel.swift */,
 				9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */,
 				99316A3926B7E12400D95638 /* InsertIdPw.swift */,
-				996F46BE26BAD273002857D7 /* SearchIdModel.swift */,
+				99142C2626BAF6A50051F347 /* QueryEmailModel.swift */,
+				99142C2826BAF6C30051F347 /* DBEmailModel.swift */,
+				995719A426BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift */,
 			);
 			path = Login_P;
 			sourceTree = "<group>";
@@ -258,17 +267,20 @@
 				996DAEE626B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift in Sources */,
 				9939873B26B3C0130018C208 /* QueryModel.swift in Sources */,
 				990EFB7726B911CF00DF056C /* PWFindViewController.swift in Sources */,
+				995719A126BCB129007E55ED /* PWEmailViewController.swift in Sources */,
 				99D8F33C26B27305009DB9D0 /* Share.swift in Sources */,
 				99C9117D26B8F2ED00F3AA3E /* SignUpOkViewController.swift in Sources */,
 				990EFB7526B90D6900DF056C /* CheckFindIdViewController.swift in Sources */,
+				995719A526BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift in Sources */,
 				99D8F34226B2871A009DB9D0 /* IDFindViewController.swift in Sources */,
 				9939873926B39A4C0018C208 /* TestViewController.swift in Sources */,
 				99356E9826B1B4AF002340F9 /* ViewController.swift in Sources */,
-				996F46BF26BAD273002857D7 /* SearchIdModel.swift in Sources */,
 				9939873D26B3C3380018C208 /* DBModel.swift in Sources */,
 				99356E9426B1B4AF002340F9 /* AppDelegate.swift in Sources */,
 				99D8F33E26B27741009DB9D0 /* MainViewController.swift in Sources */,
+				99142C2726BAF6A50051F347 /* QueryEmailModel.swift in Sources */,
 				99C9116826B8D0D700F3AA3E /* NickNameViewController.swift in Sources */,
+				99142C2926BAF6C30051F347 /* DBEmailModel.swift in Sources */,
 				99356EA826B1C26D002340F9 /* SignUpViewController.swift in Sources */,
 				9986CC1626B641B200C4E4ED /* SignUp_IdPwdViewController.swift in Sources */,
 				99356E9626B1B4AF002340F9 /* SceneDelegate.swift in Sources */,
