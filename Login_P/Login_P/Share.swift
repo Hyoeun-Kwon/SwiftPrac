@@ -10,6 +10,6 @@ import Foundation
 struct Share {
     static var userID: String = ""
     static var userPwd: String = ""
-    static var IP: String = "http://192.168.35.241"
+    static var IP: String = "http://192.168.118.130"
     static var searchUserId: String = ""
 }

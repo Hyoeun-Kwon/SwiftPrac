@@ -28,9 +28,9 @@ class VerifyDuplicatedIdModel{
         let defaultSession = URLSession.init(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{
-                print("Failed to download data")
+                print("Failed to download verifyDuplicatedId data")
             }else{
-                print("Id Data is downloaded")
+                print("VerifyDuplicatedId Data is downloaded")
                 self.parseJSON(data!)
             }
             

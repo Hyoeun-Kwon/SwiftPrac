@@ -154,13 +154,7 @@ class SignUp_InsertInfoEmailViewController: UIViewController, MFMailComposeViewC
     }//prepare
     
     
-    
-    
-    
-    
-    
-    
-    
+ 
     // 터치
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

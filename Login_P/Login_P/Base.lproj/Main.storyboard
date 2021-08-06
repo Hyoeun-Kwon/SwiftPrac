@@ -682,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5d-gA-G8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="-1173"/>
+            <point key="canvasLocation" x="2238" y="-1167"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="8tP-Pg-zq1">
@@ -752,27 +752,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ie-oN-y0w">
-                                <rect key="frame" x="349" y="235" width="13" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.forward" catalog="system"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-wb-Edx">
-                                <rect key="frame" x="349" y="266" width="13" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.forward" catalog="system"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPi-D2-AYu">
-                                <rect key="frame" x="343" y="334" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="보내기"/>
-                                <connections>
-                                    <action selector="btnSendCode:" destination="RIt-0t-vof" eventType="touchUpInside" id="6bg-yI-KBn"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="본인확인을 위해  인증을 진행해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxz-8l-h1c">
                                 <rect key="frame" x="33" y="129" width="223" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -790,6 +769,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="0Zf-E4-igm"/>
+                                    <action selector="btnNext:" destination="vNj-4O-TxT" eventType="touchUpInside" id="2Y4-6h-edt"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9to-Py-PtH">
@@ -811,6 +791,12 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ie-oN-y0w">
+                                <rect key="frame" x="349" y="265" width="13" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.forward" catalog="system"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원 이용 약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-16-3FY">
                                 <rect key="frame" x="33" y="295" width="300" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -818,6 +804,12 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-wb-Edx">
+                                <rect key="frame" x="349" y="296" width="13" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.forward" catalog="system"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* 타인의 개인정보를 도용하여 가입한 경우, 서비스 이용 제한 및 법적 제재를 받으실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJH-7d-C6J">
                                 <rect key="frame" x="25" y="514" width="349" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -837,7 +829,17 @@
                                 </state>
                                 <connections>
                                     <action selector="btnAgreeAll:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="GV8-yb-1HR"/>
+                                    <action selector="btnAgreeAuth:" destination="vNj-4O-TxT" eventType="touchUpInside" id="Hhh-vk-bW7"/>
                                     <action selector="btnAgreeAuth:" destination="RIt-0t-vof" eventType="touchUpInside" id="TwA-O9-i5h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPi-D2-AYu">
+                                <rect key="frame" x="339" y="361" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="보내기"/>
+                                <connections>
+                                    <action selector="btnSendCode:" destination="RIt-0t-vof" eventType="touchUpInside" id="6bg-yI-KBn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -846,12 +848,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rzh-c9-ynX"/>
                     <connections>
+                        <outlet property="btnAgreeAuth" destination="ntr-VT-nYK" id="oTJ-we-ElU"/>
+                        <outlet property="btnAgreePersonalInfo" destination="6Ie-oN-y0w" id="3fW-9w-qGp"/>
+                        <outlet property="btnAgreeUse" destination="kRE-wb-Edx" id="MFA-JX-CTP"/>
+                        <outlet property="btnNext" destination="Gwi-gG-g6D" id="zmY-gR-ynF"/>
+                        <outlet property="lblAgreePersonalInfo" destination="Tty-Jf-KQI" id="3Tu-K6-bHv"/>
+                        <outlet property="lblAgreeUse" destination="Jed-16-3FY" id="Jyz-it-17z"/>
+                        <outlet property="tfAuthCode" destination="foW-7j-Nqe" id="dg8-T1-eTm"/>
+                        <outlet property="tfEmail" destination="9to-Py-PtH" id="FjQ-nv-hrV"/>
                         <segue destination="Fts-g1-0Ko" kind="show" identifier="sgToChangePw" id="TFs-pG-TJ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Fr-Wm-Acv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="-1183"/>
+            <point key="canvasLocation" x="1525" y="-1158"/>
         </scene>
         <!--Find View Controller-->
         <scene sceneID="6di-Zd-PcW">

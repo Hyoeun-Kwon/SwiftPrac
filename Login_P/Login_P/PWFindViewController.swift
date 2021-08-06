@@ -23,6 +23,7 @@ class PWFindViewController: UIViewController {
     @IBOutlet weak var lblPw: UILabel!
     @IBOutlet weak var lblCheckPw: UILabel!
     
+    var sendId = ""
    
     
     override func viewDidLoad() {
@@ -39,7 +40,7 @@ class PWFindViewController: UIViewController {
         //인증이 완료 되어 맞다면!! 으로 변경
         //메세지 창에 현재 아이디
         //lblMessage.text = "\(defaultUserId as! String)님의 비밀번호를 변경합니다."
-        lblMessage.text = "\(Share.userID)님의 비밀번호를 변경합니다."
+        lblMessage.text = "\(sendId)님의 비밀번호를 변경합니다."
 
        
     }//viewDidLoad
@@ -88,14 +89,35 @@ class PWFindViewController: UIViewController {
     
     @IBAction func btnNext(_ sender: UIButton) {
         remove()
-        
-        
+
         //해당 이메일의 아이디의 패스워드를 업데이트!
-        
+        let userPw = tfNewPw.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if checkIsValidPw() == true && checkPw() == true{
             //self.performSegue(withIdentifier: "sgToNickName", sender: self)
+            let changePw = ChangePwModel()
+            let result = changePw.changePwItems(password: userPw, id: sendId)
            
+            if result{
+                let resultAlert = UIAlertController(title: "완료", message: "비밀번호가 수정되었습니다.", preferredStyle: .alert)
+                let onAction = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
+                    self.navigationController?.popViewController(animated: true)
+                })
+                
+                resultAlert.addAction(onAction)
+                present(resultAlert, animated: true, completion: nil)
+           
+            }else{
+                let resultAlert = UIAlertController(title: "에러", message: "비밀번호 변경이 불가합니다.", preferredStyle: .alert)
+                let onAction = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
+                    self.navigationController?.popViewController(animated: true)
+                })
+                
+                resultAlert.addAction(onAction)
+                present(resultAlert, animated: true, completion: nil)
+
+            }
+            
         }
         
         //비밀번호가 변경되었습니다 얼러트 뜨고 로그인 화면으로 돌아가기!

@@ -26,6 +26,7 @@
 		9942D19726B45CDE00EA9162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */; };
 		995719A126BCB129007E55ED /* PWEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995719A026BCB129007E55ED /* PWEmailViewController.swift */; };
 		995719A526BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995719A426BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift */; };
+		995719A726BCDFB9007E55ED /* ChangePw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995719A626BCDFB9007E55ED /* ChangePw.swift */; };
 		996DAEE626B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */; };
 		9986CC1626B641B200C4E4ED /* SignUp_IdPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9986CC1526B641B200C4E4ED /* SignUp_IdPwdViewController.swift */; };
 		99C9116826B8D0D700F3AA3E /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9116726B8D0D700F3AA3E /* NickNameViewController.swift */; };
@@ -59,6 +60,7 @@
 		9942D19626B45CDE00EA9162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		995719A026BCB129007E55ED /* PWEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWEmailViewController.swift; sourceTree = "<group>"; };
 		995719A426BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyDuplicatedIdModel.swift; sourceTree = "<group>"; };
+		995719A626BCDFB9007E55ED /* ChangePw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePw.swift; sourceTree = "<group>"; };
 		996DAEE526B4093200FB499B /* SignUp_InsertInfoEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_InsertInfoEmailViewController.swift; sourceTree = "<group>"; };
 		9986CC1526B641B200C4E4ED /* SignUp_IdPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_IdPwdViewController.swift; sourceTree = "<group>"; };
 		99C9116726B8D0D700F3AA3E /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				99142C2626BAF6A50051F347 /* QueryEmailModel.swift */,
 				99142C2826BAF6C30051F347 /* DBEmailModel.swift */,
 				995719A426BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift */,
+				995719A626BCDFB9007E55ED /* ChangePw.swift */,
 			);
 			path = Login_P;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				99D8F33C26B27305009DB9D0 /* Share.swift in Sources */,
 				99C9117D26B8F2ED00F3AA3E /* SignUpOkViewController.swift in Sources */,
 				990EFB7526B90D6900DF056C /* CheckFindIdViewController.swift in Sources */,
+				995719A726BCDFB9007E55ED /* ChangePw.swift in Sources */,
 				995719A526BCCEEC007E55ED /* VerifyDuplicatedIdModel.swift in Sources */,
 				99D8F34226B2871A009DB9D0 /* IDFindViewController.swift in Sources */,
 				9939873926B39A4C0018C208 /* TestViewController.swift in Sources */,
