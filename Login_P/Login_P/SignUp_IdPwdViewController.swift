@@ -36,28 +36,32 @@ class SignUp_IdPwdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        remove()
+        
+        //텍스트필드,라벨 지우기
+        removeLabel()
+        removeTextField()
         
         // <Back 을 < 로 바꾸기
         self.navigationController?.navigationBar.topItem?.title = ""
         setUnderLine()
         setRadius()
         
-        
-        
-        
+           
     }//viewDidLoad
     
-    //라벨 클리어
-    func remove(){
-        
-        lblId.text = ""
-        lblPw.text = ""
-        lblCheckPw.text = ""
-        
-    }
+    //라벨 지우기
+    func removeLabel(){
+        lblId.text?.removeAll()
+        lblPw.text?.removeAll()
+        lblCheckPw.text?.removeAll()
+    }//remove
     
+    //텍스트필드 지우기
+    func removeTextField(){
+        tfUserId.text?.removeAll()
+        tfUserPassWord.text?.removeAll()
+        tfPwdCheck.text?.removeAll()
+    }
 
     // 비밀번호 시크릿모드로 보기, 눈으로 직접 확인하기
     @IBAction func btnSeeSecurePw(_ sender: UIButton) {
@@ -84,7 +88,7 @@ class SignUp_IdPwdViewController: UIViewController {
         let idReg = "^[a-zA-Z0-9]{4,13}$"
         let idTesting = NSPredicate(format: "SELF MATCHES %@", idReg)
         return idTesting.evaluate(with: id)
-    }
+    }//isValidId
 
     //패스워드 정규식 체크
     func isValidPw(mypassword : String) -> Bool {
@@ -94,7 +98,7 @@ class SignUp_IdPwdViewController: UIViewController {
         let passwordTesting = NSPredicate(format: "SELF MATCHES %@", passwordReg)//프로퍼티 초기화
         return passwordTesting.evaluate(with: mypassword)
         
-    }
+    }//isValidPw
     
     
     //비밀번호 확인 체크
@@ -106,7 +110,7 @@ class SignUp_IdPwdViewController: UIViewController {
             lblCheckPw.text = "비밀번호가 일치하지 않습니다."
             return false
         }
-    }
+    }//checkPw
     
     //아이디 텍스트 필드와 비교
     func checkIsValidId() -> Bool {
@@ -115,7 +119,7 @@ class SignUp_IdPwdViewController: UIViewController {
             return false
         }
             return true
-    }
+    }//checkIsValidId
     
     //비밀번호 텍스트 필드와 비교
     func checkIsValidPw() -> Bool {
@@ -124,7 +128,7 @@ class SignUp_IdPwdViewController: UIViewController {
             return false
         }
             return true
-    }
+    }//checkIsValidPw
     
 
     
@@ -132,7 +136,7 @@ class SignUp_IdPwdViewController: UIViewController {
     @IBAction func btnNext(_ sender: UIButton) {
         
  
-        remove()//label 빈칸
+        removeLabel()//label 빈칸
 
         if checkIsValidId() == true && checkIsValidPw() == true && checkPw() == true {
             
@@ -207,13 +211,13 @@ class SignUp_IdPwdViewController: UIViewController {
         tfPwdCheck.textColor = UIColor.systemGray
         
         
-    }
+    }//setUndeLine
     
     func setRadius(){
         btnNext.layer.cornerRadius = 20
     }
     
-}
+}//-----------
 
 extension SignUp_IdPwdViewController: VerifyDuplicatedIdProtocol{
 
@@ -236,5 +240,5 @@ extension SignUp_IdPwdViewController: VerifyDuplicatedIdProtocol{
         }
     }
   
-}
+}//extension
 

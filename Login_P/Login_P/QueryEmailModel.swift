@@ -19,7 +19,7 @@ class QueryEmailModel{
     
     func downloadItems(subUrl: String){
         
-        var urlPath = Share.IP + ":8080/starbucks/he/findIdSelect.jsp?email=\(subUrl)"
+        var urlPath = Share.IP + ":8080/starbucks/jsp/he/findIdSelect.jsp?email=\(subUrl)"
         print(urlPath)
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
@@ -38,31 +38,31 @@ class QueryEmailModel{
         task.resume()
     }
     
-    func sendEmail(email: String, password: String) -> Bool{
-            
-            var result : Bool = true
-            var urlPath = Share.IP + ":8080/starbucks/he/findPassword_SendEmail.jsp"
-            let urlAdd = "?email=\(email)&password=\(password)"
-            urlPath += urlAdd
-            print(urlPath)
-            
-            // 한글 url encoding
-            urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-            
-            let url: URL = URL(string: urlPath)!
-            let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
-            let task = defaultSession.dataTask(with: url){(data, response, error) in
-                if error != nil{
-                    print("Failed to send email")
-                    result = false
-                }else{
-                    print("Email is sended")
-                    result = true
-                }
-            }
-            task.resume()
-            return result
-        }
+//    func sendEmail(email: String, password: String) -> Bool{
+//            
+//            var result : Bool = true
+//            var urlPath = Share.IP + ":8080/starbucks/jsp/he/SendEmail.jsp"
+//            let urlAdd = "?email=\(email)&password=\(password)"
+//            urlPath += urlAdd
+//            print("QueryModel_sendEmail\(urlPath)")
+//            
+//            // 한글 url encoding
+//            urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+//            
+//            let url: URL = URL(string: urlPath)!
+//            let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
+//            let task = defaultSession.dataTask(with: url){(data, response, error) in
+//                if error != nil{
+//                    print("Failed to send email")
+//                    result = false
+//                }else{
+//                    print("Email is sended")
+//                    result = true
+//                }
+//            }
+//            task.resume()
+//            return result
+//        }
     
     
 

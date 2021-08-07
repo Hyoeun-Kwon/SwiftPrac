@@ -8,7 +8,8 @@
 import UIKit
 
 class SignUpOkViewController: UIViewController {
-
+    
+    //받은id
     var receiveMsgId = ""
     
     @IBOutlet weak var lblWelcomeMsg: UILabel!
@@ -24,22 +25,23 @@ class SignUpOkViewController: UIViewController {
         lblWelcomeMsg.text = "\(receiveMsgId)님, 회원가입이 완료되었습니다."
         
         
-    }
+    }//viewDidLoad
     
 
     
     
     @IBAction func btnNext(_ sender: UIButton) {
-       
-        self.performSegue(withIdentifier: "sgSignToLogin", sender: self)
+       //네비게이션의처음: 로그인화면으로 돌아가기
+        self.navigationController?.popToRootViewController(animated: true)
+
     
-    }
+    }//btnNext
     
     
     
     
     func setRadius(){
         btnNext.layer.cornerRadius = 20
-    }
+    }//setRadius
 
-}
+}//-----

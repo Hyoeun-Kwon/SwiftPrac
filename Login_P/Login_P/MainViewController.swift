@@ -56,7 +56,8 @@ class MainViewController: UIViewController {
                 }
             }
             
-            self.performSegue(withIdentifier: "sgMainToLogin", sender: self)
+//            self.performSegue(withIdentifier: "sgMainToLogin", sender: self)
+            self.navigationController?.popToRootViewController(animated: true)
 
         })
         

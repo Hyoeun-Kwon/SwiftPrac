@@ -98,10 +98,10 @@
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MV6-gD-C5Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0l-0S-cEO">
-                                <rect key="frame" x="187" y="689" width="41" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0l-0S-cEO">
+                                <rect key="frame" x="64" y="698" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="kakao"/>
+                                <state key="normal" image="kakaologin"/>
                                 <connections>
                                     <action selector="btnKakao:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XI5-Y7-ZGS"/>
                                 </connections>
@@ -295,11 +295,10 @@
                                 </state>
                                 <connections>
                                     <action selector="btnNext:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="L5T-rT-7aB"/>
-                                    <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="urM-Cb-Zpf"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DB4-Oq-HNa">
-                                <rect key="frame" x="29" y="437" width="357" height="64"/>
+                                <rect key="frame" x="29" y="466" width="357" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -308,10 +307,10 @@
                                 <rect key="frame" x="29" y="365" width="308" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* 타인의 개인정보를 도용하여 가입한 경우, 서비스 이용 제한 및 법적 제재를 받으실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-7e-g9U">
-                                <rect key="frame" x="33" y="509" width="349" height="55"/>
+                                <rect key="frame" x="33" y="538" width="349" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -349,7 +348,6 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnAgreeAll:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="I2U-4h-3tT"/>
                                     <action selector="btnAgreeAuth:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="0oP-WQ-KgZ"/>
                                 </connections>
                             </button>
@@ -371,10 +369,16 @@
                                 <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="보내기"/>
                                 <connections>
-                                    <action selector="btnSendCode:" destination="RIt-0t-vof" eventType="touchUpInside" id="4O6-IN-gac"/>
                                     <action selector="btnSendCode:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="nQG-yg-Otm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZo-lM-ysK">
+                                <rect key="frame" x="29" y="437" width="362" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DdG-gg-pAn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -387,6 +391,7 @@
                         <outlet property="btnNext" destination="q7j-9c-W1e" id="avR-3V-24e"/>
                         <outlet property="lblAgreePersonalInfo" destination="9Lq-Ed-DAq" id="Svh-CV-1Ud"/>
                         <outlet property="lblAgreeUse" destination="oWm-4c-q4e" id="6Yi-0r-7VW"/>
+                        <outlet property="lblEmailCheck" destination="MZo-lM-ysK" id="P30-5y-f9C"/>
                         <outlet property="tfAuthCode" destination="DB4-Oq-HNa" id="6bO-rL-g8r"/>
                         <outlet property="tfEmail" destination="gjc-8F-5dx" id="rAQ-OT-8g9"/>
                         <segue destination="J2L-hO-Jiy" kind="show" identifier="sgToInsertIdPwd" id="jk4-2X-FF5"/>
@@ -432,8 +437,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="C5k-Pj-QvE"/>
-                                    <action selector="btnNext:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="CFx-am-Mtc"/>
                                     <action selector="btnNext:" destination="J2L-hO-Jiy" eventType="touchUpInside" id="aBq-Bk-Nbx"/>
                                 </connections>
                             </button>
@@ -458,7 +461,7 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="비밀번호 (10~20자리 이내)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jX-Iv-cfU">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="비밀번호 (5~20자리 이내)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jX-Iv-cfU">
                                 <rect key="frame" x="29" y="322" width="357" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -518,10 +521,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="7Ue-b3-fXb"/>
                                     <action selector="btnNext:" destination="L3w-hh-jXd" eventType="touchUpInside" id="qRA-FH-4F5"/>
-                                    <action selector="btnNext:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="yb5-qi-60E"/>
-                                    <segue destination="y0F-w5-i04" kind="show" identifier="sgToSignUpOk" id="Uxq-Vs-cH4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYJ-tg-tTn">
@@ -538,6 +538,7 @@
                     <connections>
                         <outlet property="btnNext" destination="y1p-Pn-2zw" id="4Om-fH-Le8"/>
                         <outlet property="tfNickname" destination="FYJ-tg-tTn" id="OKD-MB-cQx"/>
+                        <segue destination="y0F-w5-i04" kind="show" identifier="sgToSignUpOk" id="ivG-7W-7Mc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDh-8g-owt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -566,9 +567,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnNext:" destination="y0F-w5-i04" eventType="touchUpInside" id="bn7-xX-aKI"/>
-                                    <action selector="btnNext:" destination="L3w-hh-jXd" eventType="touchUpInside" id="jvd-su-DKw"/>
-                                    <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="mEC-Kv-txt"/>
-                                    <action selector="btnNext:" destination="ZNo-NJ-fzl" eventType="touchUpInside" id="xgf-gM-pPc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00님, 회원가입이 완료되었습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S8-zc-vzg">
@@ -604,13 +602,13 @@
                                 <rect key="frame" x="29" y="240" width="357" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="새 비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XSf-0G-bJY">
                                 <rect key="frame" x="29" y="341" width="357" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-ue-Prp">
                                 <rect key="frame" x="29" y="786" width="357" height="60"/>
@@ -621,19 +619,18 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="btb-pk-RAK"/>
                                     <action selector="btnNext:" destination="Fts-g1-0Ko" eventType="touchUpInside" id="ce2-GR-9Cc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aub-hh-Wfv">
-                                <rect key="frame" x="29" y="312" width="362" height="21"/>
+                                <rect key="frame" x="29" y="312" width="312" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qk-Cb-rZE">
-                                <rect key="frame" x="29" y="413" width="362" height="21"/>
+                                <rect key="frame" x="29" y="413" width="312" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
@@ -666,6 +663,15 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbS-U6-3kb">
+                                <rect key="frame" x="349" y="312" width="26" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="eye.slash" catalog="system"/>
+                                <connections>
+                                    <action selector="btnSeeSecurePw:" destination="Fts-g1-0Ko" eventType="touchUpInside" id="EAx-4Z-oAd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sz5-n4-Gfb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -673,6 +679,7 @@
                     <navigationItem key="navigationItem" id="WUU-Xh-A0u"/>
                     <connections>
                         <outlet property="btnNext" destination="Qr5-ue-Prp" id="2hK-Bl-wiz"/>
+                        <outlet property="btnSeeSecurePw" destination="HbS-U6-3kb" id="nAF-Lu-eIL"/>
                         <outlet property="lblCheckPw" destination="2Qk-Cb-rZE" id="0ia-NS-o3z"/>
                         <outlet property="lblMessage" destination="JFi-Cy-ckV" id="W1b-4b-ucw"/>
                         <outlet property="lblPw" destination="aub-hh-Wfv" id="VtN-qT-X7Z"/>
@@ -682,7 +689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5d-gA-G8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2238" y="-1167"/>
+            <point key="canvasLocation" x="2237.68115942029" y="-1167.1875"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="8tP-Pg-zq1">
@@ -768,7 +775,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnNext:" destination="RIt-0t-vof" eventType="touchUpInside" id="0Zf-E4-igm"/>
                                     <action selector="btnNext:" destination="vNj-4O-TxT" eventType="touchUpInside" id="2Y4-6h-edt"/>
                                 </connections>
                             </button>
@@ -776,13 +782,13 @@
                                 <rect key="frame" x="25" y="344" width="296" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foW-7j-Nqe">
-                                <rect key="frame" x="25" y="416" width="353" height="64"/>
+                                <rect key="frame" x="23" y="442" width="353" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 제공 및 이용약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-Jf-KQI">
                                 <rect key="frame" x="33" y="265" width="300" height="21"/>
@@ -828,9 +834,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnAgreeAll:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="GV8-yb-1HR"/>
                                     <action selector="btnAgreeAuth:" destination="vNj-4O-TxT" eventType="touchUpInside" id="Hhh-vk-bW7"/>
-                                    <action selector="btnAgreeAuth:" destination="RIt-0t-vof" eventType="touchUpInside" id="TwA-O9-i5h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPi-D2-AYu">
@@ -839,9 +843,16 @@
                                 <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="보내기"/>
                                 <connections>
-                                    <action selector="btnSendCode:" destination="RIt-0t-vof" eventType="touchUpInside" id="6bg-yI-KBn"/>
+                                    <action selector="btnSendCode:" destination="vNj-4O-TxT" eventType="touchUpInside" id="JBA-M3-hYY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ4-e2-Hwc">
+                                <rect key="frame" x="25" y="413" width="308" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xoz-Yf-4Ju"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -854,6 +865,7 @@
                         <outlet property="btnNext" destination="Gwi-gG-g6D" id="zmY-gR-ynF"/>
                         <outlet property="lblAgreePersonalInfo" destination="Tty-Jf-KQI" id="3Tu-K6-bHv"/>
                         <outlet property="lblAgreeUse" destination="Jed-16-3FY" id="Jyz-it-17z"/>
+                        <outlet property="lblEmailCheck" destination="VQ4-e2-Hwc" id="rSX-LN-hhy"/>
                         <outlet property="tfAuthCode" destination="foW-7j-Nqe" id="dg8-T1-eTm"/>
                         <outlet property="tfEmail" destination="9to-Py-PtH" id="FjQ-nv-hrV"/>
                         <segue destination="Fts-g1-0Ko" kind="show" identifier="sgToChangePw" id="TFs-pG-TJ1"/>
@@ -861,7 +873,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Fr-Wm-Acv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="-1158"/>
+            <point key="canvasLocation" x="1524.6376811594205" y="-1158.4821428571429"/>
         </scene>
         <!--Find View Controller-->
         <scene sceneID="6di-Zd-PcW">
@@ -894,13 +906,13 @@
                                 <rect key="frame" x="29" y="354" width="296" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="인증코드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-dS-bSv">
-                                <rect key="frame" x="29" y="426" width="353" height="64"/>
+                                <rect key="frame" x="27" y="452" width="353" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 제공 및 이용약관 동의 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlV-sv-2o0">
                                 <rect key="frame" x="37" y="275" width="300" height="21"/>
@@ -955,10 +967,16 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnAgreeAll:" destination="ZUz-B3-CCR" eventType="touchUpInside" id="CJu-Ny-4E5"/>
                                     <action selector="btnAgreeAuth:" destination="RIt-0t-vof" eventType="touchUpInside" id="fMD-MN-O0p"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2H-ct-Voz">
+                                <rect key="frame" x="29" y="423" width="308" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VdR-KZ-EYK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -971,6 +989,7 @@
                         <outlet property="btnNext" destination="WYx-DQ-RHd" id="UlL-2W-kY5"/>
                         <outlet property="lblAgreePersonalInfo" destination="YlV-sv-2o0" id="3XL-Ph-O6v"/>
                         <outlet property="lblAgreeUse" destination="AZ9-XI-T6l" id="eF3-9W-nHX"/>
+                        <outlet property="lblEmailCheck" destination="H2H-ct-Voz" id="PtH-r4-9jH"/>
                         <outlet property="tfAuthCode" destination="V0d-dS-bSv" id="KUs-HQ-0Qa"/>
                         <outlet property="tfEmail" destination="OXF-MG-QqB" id="5eU-wm-KNI"/>
                         <segue destination="oIJ-Gi-5kd" kind="show" identifier="sgToCheckFindId" id="KTI-jC-Xgm"/>
@@ -996,6 +1015,9 @@
                                 <state key="normal" title="로그인하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnLogin:" destination="oIJ-Gi-5kd" eventType="touchUpInside" id="RpH-ai-JCg"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="duq-X1-Grg">
                                 <rect key="frame" x="71" y="214" width="273" height="302"/>
@@ -1046,6 +1068,7 @@
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <image name="kakaologin" width="300" height="45"/>
         <image name="key" width="530" height="471"/>
         <image name="startbucksLogo" width="592" height="538"/>
         <systemColor name="labelColor">

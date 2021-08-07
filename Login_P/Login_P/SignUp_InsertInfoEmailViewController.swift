@@ -10,10 +10,14 @@ import UIKit
 import MessageUI
 class SignUp_InsertInfoEmailViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
-    
+    //텍스트 필드
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var tfAuthCode: UITextField!
+    
+    //이메일 정규식 확인 메시지
+    @IBOutlet weak var lblEmailCheck: UILabel!
+    
     
     //인증약관 동의버튼
     @IBOutlet weak var btnAgreeAuth: UIButton!
@@ -22,8 +26,10 @@ class SignUp_InsertInfoEmailViewController: UIViewController, MFMailComposeViewC
     @IBOutlet weak var lblAgreeUse: UILabel!
     @IBOutlet weak var btnAgreeUse: UIButton!
     
-    
+    //변수
+    let sendEmailModel = SendEmailModel()
     var userEmail = ""
+    var tempCode = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +39,24 @@ class SignUp_InsertInfoEmailViewController: UIViewController, MFMailComposeViewC
         setUnderLine()
         setRadius()
         
+        // 화면 되돌아 왔을때 텍스트필드 지우기
+        remove()
+        
+        // 화면 되돌아 왔을때 정규식확인메시지 지우기
+        removeEmailLabel()
+        
     }//viewDidLoad
     
+    // 텍스트필드 지우기
+    func remove(){
+        tfEmail.text?.removeAll()
+        tfAuthCode.text?.removeAll()
+    }
     
+    // 이메일 정규식확인메시지 지우기
+    func removeEmailLabel(){
+        lblEmailCheck.text?.removeAll()
+    }
     
     //약관동의버튼 누르면 -> 아래 동의 라벨들 사라지기
     @IBAction func btnAgreeAuth(_ sender: UIButton) {
@@ -55,88 +76,101 @@ class SignUp_InsertInfoEmailViewController: UIViewController, MFMailComposeViewC
                     btnAgreeAuth.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
                 }
         
-    }
+    }//btnAgreeAuth
     
+    //이메일 정규식 체크
+    func isValidEmail(testStr: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }//isValidEmail
     
+    //이메일 텍스트 필드와 비교
+    func checkIsValidEmail() -> Bool {
+        if isValidEmail(testStr: tfEmail.text!) == false {
+            lblEmailCheck.text = "이메일 형식과 일치하지 않습니다."
+            return false
+        }
+            return true
+    }//checkIsValidEmail
     
-    
-    
-    
+
+
+    // 임시 인증코드 보내기
     @IBAction func btnSendCode(_ sender: UIButton) {
         
-        let mailComposeViewController = configuredMailComposeViewController()
-                        if MFMailComposeViewController.canSendMail() {
-                            // Present the view controller modally.
-                            self.present(mailComposeViewController, animated: true, completion: nil)
-                            print("can send mail")
-                        } else {
-                            self.showSendMailErrorAlert()
-                        }
+        userEmail = String((tfEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
+        issueTemporaryCode()
+        sendTemporaryCodeToEmail()
 
     }//btnSendCode
     
+    
+    // 임시 인증코드 이메일 전송
+     func sendTemporaryCodeToEmail() -> Bool{
+         
+        // return queryEmailModel.sendEmail(email: userEmail, password: tempCode)
+         return sendEmailModel.sendEmail(email: userEmail, password: tempCode)
+     
+     }//sendTemporaryCode
+
+     // 임시 인증코드 발급 - 8자리
+     func issueTemporaryCode(){
+         let num = 8 // 발급할 비밀번호 자릿수
+         let temp = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+         
+         for _ in 0..<num{
+             let random = Int(arc4random_uniform(UInt32(temp.count)))
+             tempCode += String(temp[temp.index(temp.startIndex, offsetBy: random)])
+         }
+     }//issueTemporaryCode
+    
 
     
-    
+    //다음버튼
     @IBAction func btnNext(_ sender: UIButton) {
-      //버튼눌렀을때 id password 입력창으로
-        
-        if tfAuthCode.text?.isEmpty == false && btnAgreeAuth.isSelected == true {
-            self.performSegue(withIdentifier: "sgToInsertIdPwd", sender: self)
+        removeEmailLabel()
+
+        // 이메일 정규식 먼저 체크
+        if checkIsValidEmail() == true{
+            //   인증코드 제대로 입력, 동의버튼 체크 시 넘어가기
+            if tfAuthCode.text! == tempCode && btnAgreeAuth.isSelected == true {
+                self.performSegue(withIdentifier: "sgToInsertIdPwd", sender: self)
+                
+             //  인증코드 X, 동의버튼 체크O
+            }else if tfAuthCode.text! != tempCode && btnAgreeAuth.isSelected == true{
+                
+                let CodeAlert = UIAlertController(title: "경고", message: "인증번호가 틀렸습니다.", preferredStyle: .alert)
+                let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+                
+                CodeAlert.addAction(onAction)
+                present(CodeAlert, animated: true, completion: nil)
+             
+            // 인증코드 O, 동의버튼 X
+            }else if tfAuthCode.text! == tempCode && btnAgreeAuth.isSelected == false {
+                
+                let CodeAlert = UIAlertController(title: "경고", message: "필수 항목을 동의해주세요", preferredStyle: .alert)
+                let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+                
+                CodeAlert.addAction(onAction)
+                present(CodeAlert, animated: true, completion: nil)
+                
+            // 인증코드 X, 동의버튼 X
+            }else{
+                let CodeAlert = UIAlertController(title: "경고", message: "필수항목 동의와 인증코드를 확인해주세요", preferredStyle: .alert)
+                let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+                
+                CodeAlert.addAction(onAction)
+                present(CodeAlert, animated: true, completion: nil)
+            }
             
-        }else if tfAuthCode.text?.isEmpty == true && btnAgreeAuth.isSelected == true{
-            
-            let CodeAlert = UIAlertController(title: "경고", message: "인증번호를 입력해주세요", preferredStyle: .alert)
-            let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            
-            CodeAlert.addAction(onAction)
-            present(CodeAlert, animated: true, completion: nil)
-            
-        }else if tfAuthCode.text?.isEmpty == false && btnAgreeAuth.isSelected == false {
-            let CodeAlert = UIAlertController(title: "경고", message: "필수 항목을 동의해주세요", preferredStyle: .alert)
-            let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            
-            CodeAlert.addAction(onAction)
-            present(CodeAlert, animated: true, completion: nil)
-        }else{
-            let CodeAlert = UIAlertController(title: "경고", message: "필수 항목 동의와 인증번호를 입력해주세요", preferredStyle: .alert)
-            let onAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            
-            CodeAlert.addAction(onAction)
-            present(CodeAlert, animated: true, completion: nil)
         }
-      
+        
+ 
  }//btnNext
 
 
-    //이메일 함수 -1
-      func configuredMailComposeViewController() -> MFMailComposeViewController {
-              let mailComposerVC = MFMailComposeViewController()
-              mailComposerVC.mailComposeDelegate = self
-          
-          // Configure the fields of the interface.
-              mailComposerVC.setToRecipients(["let.khe92@gmail.com"])
-              mailComposerVC.setSubject("비밀번호 변경 번호")
-              mailComposerVC.setMessageBody("여러분의 소중한 비밀번호를 누군가에게 알려주지 마세요. \n - 사이렌오더 -", isHTML: false)
-              
-              return mailComposerVC
-          }
-       
-      //이메일 함수 -2
-      func showSendMailErrorAlert() {
-              let sendMailErrorAlert = UIAlertView(title: "메일을 전송 실패", message: "아이폰 이메일 설정을 확인하고 다시 시도해주세요.", delegate: self, cancelButtonTitle: "확인")
-              sendMailErrorAlert.show()
-          }
-          
       
-      // MARK: MFMailComposeViewControllerDelegate Method
-      //이메일 함수 -3
-      private func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-              controller.dismiss(animated: true, completion: nil)
-          }
-
-    
-    
     //prepare로 입력된 이메일 값 넘기기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -159,9 +193,9 @@ class SignUp_InsertInfoEmailViewController: UIViewController, MFMailComposeViewC
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
     //---------------------- 뷰 꾸미는 속성 (텍스트필드, 버튼)
-    
-    
+
     func setUnderLine(){
          
         //이메일
@@ -181,14 +215,13 @@ class SignUp_InsertInfoEmailViewController: UIViewController, MFMailComposeViewC
         tfAuthCode.layer.addSublayer((border2))
         tfAuthCode.textAlignment = .left
         tfAuthCode.textColor = UIColor.systemGray
-        
-        
-        
-    }
+ 
+    }//setUnderLine
     
     func setRadius(){
         btnNext.layer.cornerRadius = 20
-    }
+        
+    }//setRadius
     
     
 

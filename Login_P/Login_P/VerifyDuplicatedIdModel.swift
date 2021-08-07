@@ -19,7 +19,7 @@ class VerifyDuplicatedIdModel{
     
     func downloadItems(subUrl: String){
         
-        var urlPath = Share.IP + ":8080/starbucks/he/verifyDuplicatedId.jsp?id=\(subUrl)"
+        var urlPath = Share.IP + ":8080/starbucks/jsp/he/verifyDuplicatedId.jsp?id=\(subUrl)"
         print(urlPath)
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!

@@ -7,7 +7,6 @@
 
 
 import UIKit
-import Firebase
 import KakaoSDKCommon
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // add // Use Firebase library to configure APIs
-        FirebaseApp.configure()
         
         KakaoSDKCommon.initSDK(appKey: "c5579bcf2a139ba4d3d781efc6c52d6e")
 

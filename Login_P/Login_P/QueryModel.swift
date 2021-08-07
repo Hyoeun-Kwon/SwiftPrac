@@ -16,7 +16,7 @@ protocol QueryModelProtocol{
 class QueryModel{
     
     var delegate: QueryModelProtocol!
-    let urlPath = Share.IP + ":8080/starbucks/he/userInfoSelect.jsp"
+    let urlPath = Share.IP + ":8080/starbucks/jsp/he/userInfoSelect.jsp"
     
     func downloadItems(){
         let url: URL = URL(string: urlPath)!

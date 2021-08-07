@@ -9,7 +9,7 @@ import Foundation
 
 class ChangePwModel{
     
-    var urlPath = Share.IP + ":8080/starbucks/he/changePwUpdate.jsp"
+    var urlPath = Share.IP + ":8080/starbucks/jsp/he/changePwUpdate.jsp"
     
     func changePwItems(password: String, id: String) -> Bool { //data를 달고 넘어와서 DB연결해야함
         

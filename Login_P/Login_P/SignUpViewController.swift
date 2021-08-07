@@ -76,8 +76,7 @@ class SignUpViewController: UIViewController {
             
         }
 
-        
-    }
+    }//btnAgreeAll
     
     
  
@@ -89,7 +88,6 @@ class SignUpViewController: UIViewController {
             btnAgreeUse.isSelected = false
             print("Not selected")
             btnAgreeUse.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
-//            btnAgreeUse.point(inside: width , with: <#T##UIEvent?#>)
             
         }else {
             btnAgreeUse.isSelected = true
@@ -126,7 +124,7 @@ class SignUpViewController: UIViewController {
             btnAgreeAd.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
         }
         
-    }
+    }//btnAgreeEmailAd
     
 
     // 다음 버튼
@@ -159,16 +157,14 @@ class SignUpViewController: UIViewController {
             present(agreeAlert, animated: true, completion: nil)
         }
 
-        
-        
-        
+
     }//btnNext
     
-    //버튼 둥글게
     
+    //버튼 둥글게
     func setRadius(){
         btnNext.layer.cornerRadius = 20
-    }
+    }//setRadius
     
 
 }//---------

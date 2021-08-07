@@ -15,7 +15,7 @@ class NickNameViewController: UIViewController {
     @IBOutlet weak var btnNext: UIButton!
     
     
-    
+    //변수: 받은아이디,패스워드,이메일
     var receiveId = ""
     var receivePw = ""
     var receiveEmail = ""
@@ -29,11 +29,13 @@ class NickNameViewController: UIViewController {
         setUnderLine()
         setRadius()
     
+        remove()
         
-        
-    }
+    }//viewDidLoad
     
-
+    func remove(){
+        tfNickname.text?.removeAll()
+    }
     
     @IBAction func btnNext(_ sender: UIButton) {
         
@@ -91,14 +93,14 @@ class NickNameViewController: UIViewController {
         tfNickname.layer.addSublayer((border))
         tfNickname.textAlignment = .left
         tfNickname.textColor = UIColor.systemGray
-    }
+    }//setUnderLine
     
     
     
     func setRadius(){
         btnNext.layer.cornerRadius = 20
-    }
+    }//setRadius
     
 
 
-}
+}//--------

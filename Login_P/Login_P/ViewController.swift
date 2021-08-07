@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
@@ -26,7 +25,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //텍스트필드 지우기
+        remove()
         
         //textField 밑줄로 만들기
         setUnderLineId()
@@ -47,10 +47,8 @@ class ViewController: UIViewController {
             // 없으면 불러오기!
             doQueryModel()
 
-        }
+        }//if
         
-       // doQueryModel()
-       
         
 
 //        if let user = Auth.auth().currentUser {
@@ -63,14 +61,21 @@ class ViewController: UIViewController {
 //
 //        }
         
-    }//
+    }//viewDidLoad
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        remove()
+    }
+    
+    func remove(){
+        tfUserId.text?.removeAll()
+        tfUserPassword.text?.removeAll()
+    }
     
     
     
     @IBAction func btnKakao(_ sender: UIButton) {
-        
         
         // 카카오톡 설치 여부 확인
           if (UserApi.isKakaoTalkLoginAvailable()) {
@@ -100,15 +105,7 @@ class ViewController: UIViewController {
                 _ = oauthToken
                }
             }
-            
-            
-            
-            
-          }
-        
-        
-        
-        
+          }//else
     }
     
     
@@ -151,7 +148,6 @@ class ViewController: UIViewController {
                 
             } // if
             
-            
         } // for
         
         if count == 0 {
@@ -162,9 +158,9 @@ class ViewController: UIViewController {
         idAlert.addAction(idAction)
         present(idAlert, animated: true, completion: nil)
 
-        }
-
+        }//if
     }
+    
     
     // 아이디찾기 버튼
     @IBAction func btnFindUserId(_ sender: UIButton) {
@@ -181,14 +177,14 @@ class ViewController: UIViewController {
     
     }
     
+    
     // 회원가입
     @IBAction func btnSignUp(_ sender: UIButton) {
         //유저 디폴트가 널값일때만 넘어가게 한다!!
-        
-        self.performSegue(withIdentifier: "sgLoginToSignUp", sender: self)
-
-    
-    }
+        if UserDefaults.standard.string(forKey: "userId") == nil{
+            self.performSegue(withIdentifier: "sgLoginToSignUp", sender: self)
+        }
+    }//btnSignUp
     
     
     
@@ -227,13 +223,7 @@ class ViewController: UIViewController {
     }
     
 
-    
-    
-    
-    
-    
-    
-    
+ 
 }//----
 
 extension ViewController: QueryModelProtocol{ //데이터 불러올거야!
