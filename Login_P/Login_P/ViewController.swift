@@ -21,7 +21,15 @@ class ViewController: UIViewController {
     
     
     var feedItem: NSMutableArray = NSMutableArray()
+    var countItem: NSMutableArray = NSMutableArray()
+    
+    // kakao 위해 추가
+    var kakaoUserEmail = ""
+    var kakaoUserId = ""
+    var kakaoUserPw = ""
+    var kakaoUserNickname = ""
 
+    var kakaoCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +42,20 @@ class ViewController: UIViewController {
         
         //버튼 라운드
         setRadius()
-        print(UserDefaults.standard.object(forKey: "userId"))
+        print(UserDefaults.standard.object(forKey: "userId")!)
         //값이 있으면 유저디포트 -> 쉐어바에 들어가있는 아이디값을 넣어줘야하고 +//세그 메인화면
-        if UserDefaults.standard.object(forKey: "userId") != nil { // UserDefault에 값이 있다
-
-            Share.userID = UserDefaults.standard.object(forKey: "userId") as! String
-            print(Share.userID)
-            self.performSegue(withIdentifier: "sgLoginToMain", sender: self) //Main으로 가는 sg만들기
-
-        }else{
+//        if UserDefaults.standard.object(forKey: "userId") != nil { // UserDefault에 값이 있다
+//
+//            Share.userID = UserDefaults.standard.object(forKey: "userId") as! String
+//            print(Share.userID)
+//            self.performSegue(withIdentifier: "sgLoginToMain", sender: self) //Main으로 가는 sg만들기
+//
+//        }else{
 
             // 없으면 불러오기!
-            doQueryModel()
+//            doQueryModel()
 
-        }//if
+//        }//if
         
         
 
@@ -66,6 +74,9 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         remove()
+        doQueryModel()
+       //doKakaoCountModel()
+        
     }
     
     func remove(){
@@ -74,16 +85,22 @@ class ViewController: UIViewController {
     }
     
     
+    func doKakaoCountModel(){
+        let kakaoCountModel = KakaoCountModel()
+        kakaoCountModel.delegate = self
+        kakaoCountModel.downloadItems()
+        
+    }
+    
     
     @IBAction func btnKakao(_ sender: UIButton) {
-        
         // 카카오톡 설치 여부 확인
           if (UserApi.isKakaoTalkLoginAvailable()) {
             // 카카오톡 로그인. api 호출 결과를 클로저로 전달.
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
                     // 예외 처리 (로그인 취소 등)
-                    print(error)
+                    print("kakao login install",error)
                 }
                 else {
                     print("loginWithKakaoTalk() success.")
@@ -91,33 +108,81 @@ class ViewController: UIViewController {
                     _ = oauthToken
                    // 어세스토큰
                    let accessToken = oauthToken?.accessToken
+                    
                 }
             }
           }else{
+            
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            
                if let error = error {
                  print(error)
                }
                else {
                 print("loginWithKakaoAccount() success.")
-                
+                UserApi.shared.me() {(user, error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                       
+                        print("me() success.")
+                        // Kakao 에서 받은 이메일 정보
+                        self.kakaoUserEmail = String(user!.kakaoAccount!.email!)
+                        self.kakaoUserNickname = String(user!.kakaoAccount!.profile!.nickname!)
+                        print("kakaoUserEmail에 담기는 값: \(self.kakaoUserEmail)")
+                        // 임의의 아이디, 비밀번호 카카오변수에 넣기
+                        self.kakaoUserId = String((user!.id!))
+                        print("useridwillbe : \(self.kakaoUserId)")
+                        self.kakaoUserPw = "kakaoPassword"
+                        // 카카오 변수에 넣음 임의 아이디 비밀번호 -> Share에 넣기
+                        Share.userID = self.kakaoUserId
+                        Share.userPwd = self.kakaoUserPw
+                        // UserDefaults에 값넣기 
+                        UserDefaults.standard.set(self.kakaoUserId, forKey: "userId")
+                        
+                        let insertIdPwModel = InsertIdPwModel()
+                        let result = insertIdPwModel.insertItems(userId: self.kakaoUserId, userPw: self.kakaoUserPw, userNickname: self.kakaoUserNickname, userEmail: self.kakaoUserEmail)
+
+                        if result{
+                            let resultAlert = UIAlertController(title: "완료", message: "카카오톡으로 가입이 완료되었습니다.", preferredStyle: .alert)
+                            let onAction = UIAlertAction(title: "확인", style: .default, handler: { ACTION in
+
+                                self.performSegue(withIdentifier: "sgLoginToMain", sender: self)
+
+                            })
+
+                            resultAlert.addAction(onAction)
+                            self.present(resultAlert, animated: true, completion: nil)
+
+
+                        }else{
+                            let resultAlert = UIAlertController(title: "에러", message: "가입이 불가합니다. 다시 확인해주세요", preferredStyle: .alert)
+                            let onAction = UIAlertAction(title: "확인", style: .default, handler: { ACTION in
+                            })
+
+                            resultAlert.addAction(onAction)
+                            self.present(resultAlert, animated: true, completion: nil)
+
+                        }
+                        
+                    }
+                }
+
                 //do something
                 _ = oauthToken
                }
             }
           }//else
-    }
+    }//btnKakao
     
     
-    
-    
-    
+
     //query Model 실행
     func doQueryModel(){
         let queryModel = QueryModel()
         queryModel.delegate = self
         queryModel.downloadItems()
-        
     }
     
    
@@ -181,10 +246,33 @@ class ViewController: UIViewController {
     // 회원가입
     @IBAction func btnSignUp(_ sender: UIButton) {
         //유저 디폴트가 널값일때만 넘어가게 한다!!
-        if UserDefaults.standard.string(forKey: "userId") == nil{
+//        if UserDefaults.standard.string(forKey: "userId") == nil{
             self.performSegue(withIdentifier: "sgLoginToSignUp", sender: self)
-        }
+//        }
     }//btnSignUp
+    
+    
+    //let kakaoUserEmail = String(user!.kakaoAccount!.email!)
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "sgLoginToMain"{
+
+            let kakaoLogin = segue.destination as! MainViewController
+            //signInfo.receiveInfo(userId: userId, userPw: userPw)
+            
+            kakaoLogin.receiveKakaoInfo(email: self.kakaoUserEmail, id: self.kakaoUserId, password: self.kakaoUserPw)
+//            kakaoLogin.receiveKakaoEmail = kakaoUserEmail
+//            print("kakaoUserEmail 담아오나? \(kakaoUserEmail)")
+//            kakaoLogin.receiveKakaoId = kakaoUserId
+//            kakaoLogin.receiveKakaoPw = kakaoUserPw
+
+        }
+    }//prepare
+    
+    
+    
+    
     
     
     
@@ -231,4 +319,17 @@ extension ViewController: QueryModelProtocol{ //데이터 불러올거야!
         feedItem = items as! NSMutableArray //jsp 통해-> Bean -> Bean을 통해서 뭉텅이로 담겨져있다 가져온 data 가 들어올거임!
         // 데이터가 새로 들어왔으니 table을 다시 구성해줘
     }
+}//extension
+
+extension ViewController: KakaoCountProtocol{ //데이터 불러올거야!
+    func kakaoCountDownloaded(items: NSArray) {
+        countItem = items as! NSMutableArray
+        
+        print("item:\(items.count)")
+        
+        self.kakaoCount = Int(items.count)
+        // kakaoCount = kakao 회원 수
+        
+    }
 }
+

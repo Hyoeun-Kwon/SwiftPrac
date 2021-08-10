@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0l-0S-cEO">
-                                <rect key="frame" x="64" y="698" width="300" height="45"/>
+                                <rect key="frame" x="57" y="699" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="kakaologin"/>
                                 <connections>
@@ -728,13 +728,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qu-Am-aG2">
-                                <rect key="frame" x="166" y="499" width="82" height="30"/>
+                                <rect key="frame" x="157" y="615" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="임시 로그아웃"/>
                                 <connections>
                                     <action selector="btnLogOut:" destination="YiV-vC-fU4" eventType="touchUpInside" id="Vav-qi-XmM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kakao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xys-r9-X7l">
+                                <rect key="frame" x="66" y="438" width="247" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9LG-2F-Ocd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -743,6 +750,7 @@
                     <connections>
                         <outlet property="btnLogOut" destination="1Qu-Am-aG2" id="Ctr-Qb-vE3"/>
                         <outlet property="lblDefaultUserId" destination="FGx-Zf-bRa" id="IZm-ZM-2S5"/>
+                        <outlet property="lblKakaoEmail" destination="Xys-r9-X7l" id="Oe5-KB-Cl4"/>
                         <outlet property="lblUserId" destination="PHD-Mg-d1n" id="vlJ-8I-HzP"/>
                         <outlet property="lblUserPassword" destination="zsJ-k7-rK4" id="V1n-ca-hwf"/>
                     </connections>

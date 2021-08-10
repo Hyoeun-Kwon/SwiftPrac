@@ -10,13 +10,16 @@ import KakaoSDKUser
 class MainViewController: UIViewController {
 
     
+    var receiveKakaoEmail = ""
+    var receiveKakaoId = ""
+    var receiveKakaoPw = ""
     
     
     @IBOutlet weak var lblUserId: UILabel!
     @IBOutlet weak var lblUserPassword: UILabel!
     @IBOutlet weak var lblDefaultUserId: UILabel!
+    @IBOutlet weak var lblKakaoEmail: UILabel!
     
-
     @IBOutlet weak var btnLogOut: UIButton!
     
     override func viewDidLoad() {
@@ -29,10 +32,20 @@ class MainViewController: UIViewController {
         let defaultUserId = UserDefaults.standard.object(forKey: "userId")
         lblDefaultUserId.text = defaultUserId as? String
         
-        // Do any additional setup after loading the view.
-    }
+        lblKakaoEmail.text = receiveKakaoEmail
+        print("넘어와서 찍히는 kakaoEmail \(receiveKakaoEmail)")
+        
+        
+    }//viewDidLoad
     
-
+    // Test
+    func receiveKakaoInfo(email: String, id: String, password: String){
+        
+        self.receiveKakaoEmail = email
+        self.receiveKakaoId = id
+        self.receiveKakaoPw = password
+        
+    }
     
     
     @IBAction func btnLogOut(_ sender: UIButton) {
@@ -56,7 +69,6 @@ class MainViewController: UIViewController {
                 }
             }
             
-//            self.performSegue(withIdentifier: "sgMainToLogin", sender: self)
             self.navigationController?.popToRootViewController(animated: true)
 
         })
