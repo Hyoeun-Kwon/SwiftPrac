@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0l-0S-cEO">
-                                <rect key="frame" x="57" y="699" width="300" height="45"/>
+                                <rect key="frame" x="29" y="699" width="357" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="kakaologin"/>
                                 <connections>
@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955" y="115"/>
+            <point key="canvasLocation" x="953.62318840579712" y="114.50892857142857"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="uJU-B3-JXq">
@@ -1076,7 +1076,7 @@
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
-        <image name="kakaologin" width="300" height="45"/>
+        <image name="kakaologin" width="600" height="90"/>
         <image name="key" width="530" height="471"/>
         <image name="startbucksLogo" width="592" height="538"/>
         <systemColor name="labelColor">
